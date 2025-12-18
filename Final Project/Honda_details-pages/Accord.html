@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOLKSWAGEN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity=""
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #fff;
+            --secondary-bg: #f5f5f5;
+            --header-bg: #000;
+            --highlight-bg: #cc0000;
+            --card-bg: #1a1a1a;
+            --primary-text: #222;
+            --secondary-text: #555;
+            --highlight-text: #cc0000;
+            --white-text: #fff;
+            --button-text: #fff;
+            --muted-text: #999;
+            --luxury-gold: #d4af37;
+            --honda-red: #cc0000;
+            --honda-dark: #0d0d0d;
+            --honda-silver: #c0c0c0;
+            --font-family: "Poppins", Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--secondary-bg);
+            color: var(--primary-text);
+        }
+
+        /* Navbar & Footer */
+        nav {
+            background-color: #000;
+            font-family: var(--font-family);
+        }
+
+        nav>a {
+            font-family: var(--font-family);
+        }
+
+        footer {
+            background-color: #000;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            font-size: 16px;
+            color: #fff !important;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            color: #ff0000 !important;
+        }
+
+        .dropdown-menu {
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .dropdown-item:hover {
+            background: #f8f9fa;
+            color: #e60000;
+        }
+
+        .btn-danger {
+            background-color: #ff0000 !important;
+            border: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn-danger:hover {
+            background-color: #cc0000 !important;
+        }
+
+        /* ----------------------------- */
+        /*  DROPDOWN — SHOW ON HOVER     */
+        /* ----------------------------- */
+        @media (min-width: 992px) {
+            .navbar .dropdown:hover .dropdown-menu {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+        }
+
+        /* ----------------------------- */
+        /*  ANIMATION & TRANSITION       */
+        /* ----------------------------- */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.5s ease-in-out;
+
+            /* Glossy / Glassmorphism effect */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.885);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 12px;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            padding: 12px 0;
+        }
+
+        /* Dropdown item styling */
+        .dropdown-item {
+            color: #000;
+            font-weight: 500;
+            padding: 10px 20px;
+            transition: 0.25s ease;
+        }
+
+        /* Hover effect */
+        .dropdown-item:hover {
+            background: rgba(255, 255, 255, 0.6);
+            color: #e60000;
+            backdrop-filter: blur(18px);
+            border-radius: 8px;
+        }
+
+        #upper-footer {
+
+            flex-direction: row;
+        }
+
+        i:hover {
+            color: #e60000;
+        }
+
+        p,
+        h4 {
+            color: var(--muted-text);
+            /* font-size: 0.95rem; */
+        }
+
+        /* Navbar & Footer */
+
+        /* Breadcrumb */
+        .breadcrumb-section {
+            background: var(--primary-bg);
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .breadcrumb {
+            background: transparent;
+            margin: 0;
+            padding: 0;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-item a {
+            color: var(--secondary-text);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item a:hover {
+            color: var(--honda-red);
+        }
+
+        .breadcrumb-item.active {
+            color: var(--primary-text);
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 3rem 0;
+        }
+
+        /* Model Header */
+        .model-header {
+            background: var(--primary-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+            border-top: 4px solid var(--honda-red);
+        }
+
+        .model-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--honda-red), #a00000);
+            color: var(--white-text);
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .model-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--honda-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .model-subtitle {
+            font-size: 1.1rem;
+            color: var(--secondary-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .model-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--honda-red);
+            margin-bottom: 1.5rem;
+        }
+
+        .price-label {
+            font-size: 0.9rem;
+            color: var(--muted-text);
+            font-weight: 400;
+        }
+
+        /* Image Slider */
+        .image-slider {
+            background: var(--primary-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .carousel-inner {
+            border-radius: 10px;
+        }
+
+        .carousel-item {
+            height: 450px;
+            background: linear-gradient(135deg, var(--secondary-bg) 0%, #e8e8e8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-item .car-icon {
+            font-size: 12rem;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: var(--honda-red);
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            padding: 0.5rem;
+        }
+
+        /* Available Colors */
+        .colors-section {
+            background: var(--primary-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .section-heading {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--honda-dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid var(--honda-red);
+        }
+
+        .color-options {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .color-item {
+            text-align: center;
+        }
+
+        .color-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin: 0 auto 0.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 3px solid var(--primary-bg);
+            outline: 2px solid transparent;
+        }
+
+        .color-circle:hover {
+            transform: scale(1.15);
+            outline-color: var(--honda-red);
+        }
+
+        .color-name {
+            font-size: 0.85rem;
+            color: var(--secondary-text);
+            font-weight: 500;
+        }
+
+        /* Key Specifications */
+        .specs-section {
+            background: var(--primary-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .spec-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--secondary-bg) 0%, #e8e8e8 100%);
+            border-radius: 10px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(204, 0, 0, 0.3);
+            border-color: var(--honda-red);
+        }
+
+        .spec-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .spec-label {
+            font-size: 0.85rem;
+            color: var(--secondary-text);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .spec-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--honda-dark);
+        }
+
+        /* Overview Section */
+        .overview-section {
+            background: var(--primary-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .overview-section p {
+            color: var(--secondary-text);
+            line-height: 1.8;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Features Section */
+        .features-section {
+            background: var(--primary-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--secondary-bg);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+            border-left: 4px solid transparent;
+        }
+
+        .feature-item:hover {
+            background: #fef5f5;
+            transform: translateX(5px);
+            border-left-color: var(--honda-red);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--honda-red);
+            flex-shrink: 0;
+        }
+
+        .feature-content h5 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--honda-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-content p {
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+            margin: 0;
+        }
+
+        /* Technical Specifications */
+        .technical-specs {
+            background: var(--primary-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .specs-table {
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .specs-table tr {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .specs-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .specs-table td {
+            padding: 1rem 0;
+            font-size: 0.95rem;
+        }
+
+        .specs-table td:first-child {
+            font-weight: 600;
+            color: var(--honda-dark);
+            width: 40%;
+        }
+
+        .specs-table td:last-child {
+            color: var(--secondary-text);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--honda-dark) 0%, var(--card-bg) 100%);
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            color: var(--white-text);
+            box-shadow: 0 5px 25px rgba(204, 0, 0, 0.3);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--honda-red);
+        }
+
+        .contact-section h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn-contact {
+            background: linear-gradient(135deg, var(--honda-red), #a00000);
+            color: var(--white-text);
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(204, 0, 0, 0.4);
+            color: var(--white-text);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .model-title {
+                font-size: 2rem;
+            }
+
+            .carousel-item {
+                height: 300px;
+            }
+
+            .carousel-item .car-icon {
+                font-size: 8rem;
+            }
+
+            .specs-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            header nav a {
+                margin: 0 0.5rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+        }
+
+        footer p:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar & Footer-->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+
+            <!-- LOGO -->
+            <a class="navbar-brand d-flex align-items-center" href="Home.html">
+                <img src="logo.png" alt="Carvan Logo" height="85">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- NAV CONTENT -->
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <!-- LEFT NAV ITEMS -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+                    <!-- Brands Dropdown -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link " href="#" id="brandsDropdown" role="button" data-bs-toggle="dropdown">
+                            Brands
+                        </a>
+
+                    </li>
+
+                    <!-- Range of Cars Dropdown -->
+                    <li class="nav-item dropdown mx-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="rangeDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            Range of Cars
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Small Car</a></li>
+                            <li><a class="dropdown-item" href="#">Sedan</a></li>
+                            <li><a class="dropdown-item" href="#">Van</a></li>
+                            <li><a class="dropdown-item" href="#">SUV</a></li>
+                            <li><a class="dropdown-item" href="#">Jeep</a></li>
+                            <li><a class="dropdown-item" href="#">Convertible</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="preownedcars.html">PreOwned Cars</a>
+                    </li>
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+
+                </ul>
+
+                <!-- Right Button -->
+                <a href="#" class="btn btn-danger px-4 py-2 fw-semibold">Post Ad</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar & Footer End -->
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb" style="background: #FFFFFF;">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="brands.html">Brands</a></li>
+                    <li class="breadcrumb-item"><a href="honda.html">Honda</a></li>
+                    <li class="breadcrumb-item active">Civic 2021</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- Model Header -->
+            <div class="model-header">
+                <span class="model-badge">Compact Sedan • Proven Reliability</span>
+                <h1 class="model-title">Honda Civic 2021</h1>
+                <p class="model-subtitle">The Power of Dreams</p>
+                <div class="model-price">
+                    $22,350
+                    <span class="price-label">Starting MSRP</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Main Column -->
+                <div class="col-lg-12">
+                    <!-- Image Slider -->
+                    <div class="image-slider">
+                        <div id="carImageSlider" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carImageSlider" data-bs-slide-to="0"
+                                    class="active"></button>
+                                <button type="button" data-bs-target="#carImageSlider" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#carImageSlider" data-bs-slide-to="2"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="car-icon">🚗</div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="car-icon">🏎️</div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="car-icon">🚙</div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carImageSlider"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carImageSlider"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Available Colors -->
+                    <div class="colors-section">
+                        <h3 class="section-heading">Available Colors</h3>
+                        <div class="color-options">
+                            <div class="color-item">
+                                <div class="color-circle" style="background: #FFFFFF; border: 3px solid #ddd;"></div>
+                                <div class="color-name">Platinum White Pearl</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-circle" style="background: #1C1C1C;"></div>
+                                <div class="color-name">Crystal Black Pearl</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-circle" style="background: #CC0000;"></div>
+                                <div class="color-name">Rallye Red</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-circle" style="background: #4A5A6A;"></div>
+                                <div class="color-name">Sonic Gray Pearl</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-circle" style="background: #2E5C8A;"></div>
+                                <div class="color-name">Aegean Blue Metallic</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-circle" style="background: #C0C0C0;"></div>
+                                <div class="color-name">Lunar Silver Metallic</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Specifications -->
+                    <div class="specs-section">
+                        <h3 class="section-heading">Key Specifications</h3>
+                        <div class="specs-grid">
+                            <div class="spec-card">
+                                <div class="spec-icon">⚙️</div>
+                                <div class="spec-label">Engine</div>
+                                <div class="spec-value">2.0L I4</div>
+                            </div>
+                            <div class="spec-card">
+                                <div class="spec-icon">⚡</div>
+                                <div class="spec-label">Power</div>
+                                <div class="spec-value">158 HP</div>
+                            </div>
+                            <div class="spec-card">
+                                <div class="spec-icon">⛽</div>
+                                <div class="spec-label">Fuel Economy</div>
+                                <div class="spec-value">38 MPG</div>
+                            </div>
+                            <div class="spec-card">
+                                <div class="spec-icon">🏁</div>
+                                <div class="spec-label">0-60 MPH</div>
+                                <div class="spec-value">8.2 sec</div>
+                            </div>
+                            <div class="spec-card">
+                                <div class="spec-icon">🔧</div>
+                                <div class="spec-label">Transmission</div>
+                                <div class="spec-value">CVT Auto</div>
+                            </div>
+                            <div class="spec-card">
+                                <div class="spec-icon">👥</div>
+                                <div class="spec-label">Seating</div>
+                                <div class="spec-value">5 Passengers</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Overview -->
+                    <div class="overview-section">
+                        <h3 class="section-heading">Overview</h3>
+                        <p>The 2021 Honda Civic continues its legacy as one of America's most trusted compact sedans,
+                            combining reliability, efficiency, and engaging driving dynamics. Powered by a responsive
+                            2.0-liter naturally aspirated engine delivering 158 horsepower, the Civic achieves an
+                            impressive 38 MPG on the highway, making it an ideal choice for daily commuters and road
+                            trip enthusiasts alike.</p>
+                        <p>Inside, the Civic offers a surprisingly spacious cabin with premium materials and thoughtful
+                            design. The driver-focused cockpit features a user-friendly infotainment system with a
+                            7-inch touchscreen, Apple CarPlay and Android Auto compatibility, and excellent visibility
+                            from all angles. With its low cost of ownership, exceptional resale value, and Honda's
+                            renowned reliability, the Civic 2021 represents smart automotive value.</p>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="features-section">
+                        <h3 class="section-heading">Key Features</h3>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">📱</div>
+                            <div class="feature-content">
+                                <h5>Honda Infotainment System</h5>
+                                <p>Intuitive 7-inch touchscreen with smartphone integration, Bluetooth connectivity, and
+                                    easy-to-use interface for seamless control.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">🛡️</div>
+                            <div class="feature-content">
+                                <h5>Honda Sensing Safety Suite</h5>
+                                <p>Advanced safety features including Collision Mitigation Braking, Road Departure
+                                    Mitigation, and Adaptive Cruise Control come standard.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">🎵</div>
+                            <div class="feature-content">
+                                <h5>Premium Audio System</h5>
+                                <p>180-watt audio system with 8 speakers delivers crisp, clear sound quality for an
+                                    enjoyable listening experience.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">💺</div>
+                            <div class="feature-content">
+                                <h5>Spacious Interior</h5>
+                                <p>Surprisingly roomy cabin with ample legroom for all passengers and 15.1 cubic feet of
+                                    trunk space for cargo.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <div class="feature-content">
+                                <h5>Efficient CVT Transmission</h5>
+                                <p>Smooth continuously variable transmission optimizes fuel economy while providing
+                                    responsive acceleration when needed.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">🌟</div>
+                            <div class="feature-content">
+                                <h5>LED Lighting</h5>
+                                <p>Full LED headlights and taillights provide excellent visibility while giving the
+                                    Civic a modern, distinctive appearance.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Specifications -->
+                    <div class="technical-specs">
+                        <h3 class="section-heading">Technical Specifications</h3>
+                        <table class="specs-table">
+                            <tbody>
+                                <tr>
+                                    <td>Engine Type</td>
+                                    <td>2.0L 4-Cylinder DOHC i-VTEC</td>
+                                </tr>
+                                <tr>
+                                    <td>Horsepower</td>
+                                    <td>158 HP @ 6,500 RPM</td>
+                                </tr>
+                                <tr>
+                                    <td>Torque</td>
+                                    <td>138 lb-ft @ 4,200 RPM</td>
+                                </tr>
+                                <tr>
+                                    <td>Transmission</td>
+                                    <td>CVT (Continuously Variable Transmission)</td>
+                                </tr>
+                                <tr>
+                                    <td>Drivetrain</td>
+                                    <td>Front-Wheel Drive</td>
+                                </tr>
+                                <tr>
+                                    <td>Fuel Economy (City/Highway)</td>
+                                    <td>30 / 38 MPG</td>
+                                </tr>
+                                <tr>
+                                    <td>Fuel Tank Capacity</td>
+                                    <td>12.4 gallons</td>
+                                </tr>
+                                <tr>
+                                    <td>Seating Capacity</td>
+                                    <td>5 Passengers</td>
+                                </tr>
+                                <tr>
+                                    <td>Cargo Volume</td>
+                                    <td>15.1 cubic feet</td>
+                                </tr>
+                                <tr>
+                                    <td>Curb Weight</td>
+                                    <td>2,877 lbs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Contact Section -->
+                    <div class="contact-section">
+                        <h3>Experience Reliability Redefined</h3>
+                        <p>Schedule a test drive and discover why the Civic remains America's favorite compact sedan.
+                        </p>
+                        <a href="contact.html" class="btn-contact">Contact for Booking</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start  text-white">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 text-reset text-decoration-none">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset text-decoration-none">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset text-decoration-none">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="#" class="me-4 text-reset text-decoration-none">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset text-decoration-none">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset text-decoration-none">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Browse
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">All Cars</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">PreOwned Cars</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">Car Type</a>
+                        </p>
+
+                    </div>
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Company
+                        </h6>
+                        <p>
+                            <a href="#!" class=" text-decoration-none text-reset">About Carvan</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">Contact Support</a>
+                        </p>
+                        <p>
+                            <a href="#!" class=" text-decoration-none text-reset">Pricing</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            For Sellers
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">Pricing</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">Settings</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">Orders</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Carvan. All rights reserved. Quality Cars, Trusted Deals.
+            <a class='text-reset fw-bold text-decoration-none ' href='/home'>Carvan</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+</body>
+
+</html>

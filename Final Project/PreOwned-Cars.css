@@ -1,0 +1,335 @@
+ :root {
+   --primary-bg: #fff;
+   /* Main background */
+   --secondary-bg: #f7f7f7;
+   /* Section background (slightly off-white) */
+   --header-bg: #000;
+   /* Header/footer background */
+   --highlight-bg: #e60000;
+   /* Buttons, highlights (red) */
+   --card-bg: #1a1a1a;
+   /* Card overlays, some buttons (near black/grey) */
+
+   --primary-text: #222;
+   /* Main text color (almost black) */
+   --secondary-text: #555;
+   /* Subtitle color */
+   --highlight-text: #e60000;
+   /* Important headings/subtitles (red) */
+   --white-text: #fff;
+   /* Light text on dark backgrounds */
+
+   --button-text: #fff;
+   /* Button text (on red/black backgrounds) */
+   --muted-text: #999;
+   /* Less prominent info */
+
+   --font-family: "Poppins", Arial, Helvetica, sans-serif;
+   /* Your site's clean sans-serif heading body */
+ }
+
+ body {
+   margin: 0;
+   font-family: var(--font-family);
+ }
+
+ /* ----------------------------- */
+ /*         Navbar Start          */
+ /* ----------------------------- */
+ nav {
+   background-color: #000;
+   font-family: var(--font-family);
+ }
+
+ nav>a {
+   font-family: var(--font-family);
+ }
+
+ footer {
+   background-color: #000;
+ }
+
+ .navbar-nav .nav-link {
+   font-weight: 500;
+   font-size: 16px;
+   color: #fff !important;
+ }
+
+ .navbar-nav .nav-link:hover,
+ .navbar-nav .nav-link:focus {
+   color: #ff0000 !important;
+ }
+
+ .dropdown-menu {
+   border-radius: 8px;
+   padding: 10px;
+ }
+
+ .dropdown-item:hover {
+   background: #f8f9fa;
+   color: #e60000;
+ }
+
+ .btn-danger {
+   background-color: #ff0000 !important;
+   border: none;
+   border-radius: 6px;
+   transition: 0.3s;
+ }
+
+ .btn-danger:hover {
+   background-color: #cc0000 !important;
+ }
+
+ /* ----------------------------- */
+ /*  DROPDOWN — SHOW ON HOVER     */
+ /* ----------------------------- */
+ @media (min-width: 992px) {
+   .navbar .dropdown:hover .dropdown-menu {
+     display: block;
+     opacity: 1;
+     visibility: visible;
+     transform: translateY(0);
+   }
+ }
+
+ /* ----------------------------- */
+ /*  ANIMATION & TRANSITION       */
+ /* ----------------------------- */
+ .dropdown-menu {
+   opacity: 0;
+   visibility: hidden;
+   transform: translateY(10px);
+   transition: all 0.5s ease-in-out;
+
+   /* Glossy / Glassmorphism effect */
+   backdrop-filter: blur(12px);
+   -webkit-backdrop-filter: blur(12px);
+   background: rgba(255, 255, 255, 0.885);
+   border: 1px solid rgba(255, 255, 255, 0.25);
+   border-radius: 12px;
+
+   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+   padding: 12px 0;
+ }
+
+ /* Dropdown item styling */
+ .dropdown-item {
+   color: #000;
+   font-weight: 500;
+   padding: 10px 20px;
+   transition: 0.25s ease;
+ }
+
+ /* Hover effect */
+ .dropdown-item:hover {
+   background: rgba(255, 255, 255, 0.6);
+   color: #e60000;
+   backdrop-filter: blur(18px);
+   border-radius: 8px;
+ }
+
+ .dropdown-menu.show {
+   opacity: 1;
+   visibility: visible;
+   transform: translateY(0);
+   display: block;
+   z-index: 2000;
+ }
+
+ #upper-footer {
+
+   flex-direction: row;
+ }
+
+ i:hover {
+   color: #e60000;
+ }
+
+ p,
+ h4 {
+   color: var(--muted-text);
+   /* font-size: 0.95rem; */
+ }
+
+ p:hover {
+   color: red;
+ }
+
+ /* ----------------------------- */
+ /*         Navbar End          */
+ /* ----------------------------- */
+ /* Hero section */
+ .hero-section {
+   background: linear-gradient(135deg, var(--card-bg) 0%, var(--header-bg) 100%);
+   /* background-color: var(--card-bg); */
+   color: var(--white-text);
+   padding: 5rem 5%;
+ }
+
+ .hero-section h1 {
+   font-size: 3rem;
+   font-family: var(--font-family);
+   font-weight: 700;
+   margin-bottom: 1rem;
+ }
+
+ .hero-section h1 span {
+   color: var(--highlight-text);
+ }
+
+ .hero-section p {
+   font-size: 1.2rem;
+   color: var(--muted-text);
+   max-width: 800px;
+   margin: 0 auto;
+ }
+
+ /* Cards Section */
+ main {
+   padding: 4rem 5%;
+   background-color: var(--secondary-bg);
+   margin: 0 auto;
+   max-width: 1400px;
+ }
+
+ .Car-card {
+   background-color: var(--primary-bg);
+   border-radius: 12px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+   overflow: hidden;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   font-family: var(--font-family);
+ }
+
+ .Car-card:hover {
+   transform: translateY(-8px);
+   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+ }
+
+ .car-content {
+   padding: 1.5rem;
+ }
+
+ .car-content h3 {
+   font-weight: 700;
+   font-size: 1.5rem;
+   margin-bottom: 0.5rem;
+
+ }
+
+ .Cards-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+   gap: 2.5rem;
+
+ }
+
+ .car-details {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1rem;
+   margin-bottom: 10px;
+   column-gap: 1rem;
+ }
+
+ .detail-item {
+   font-size: 0.9rem;
+   color: var(--secondary-text);
+ }
+
+ .car-story {
+   margin: 1rem 0;
+   padding: 1rem;
+   background-color: var(--secondary-bg);
+   border-radius: 8px;
+   border-left: 3px solid var(--highlight-bg);
+ }
+
+ .car-story .story-title {
+   font-weight: 600;
+   margin-bottom: 0.5rem;
+   font-size: 0.9rem;
+ }
+
+ .car-story .story-text {
+   font-size: 0.85rem;
+   color: var(--secondary-text);
+   line-height: 1.4;
+ }
+
+ .car-specs {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   border-top: 1px solid #eee;
+   padding: 1rem 0;
+   margin: 1rem 0;
+   border-bottom: 1px solid #eee;
+   gap: 0.8rem;
+ }
+
+ .spec-item {
+   display: flex;
+   justify-content: space-between;
+   font-size: 0.9rem;
+ }
+
+ .spec-item .spec-label {
+   color: var(--muted-text);
+ }
+
+ .spec-item .spec-value {
+   color: var(--header-bg);
+   font-weight: 600;
+ }
+
+ .car-price-section {
+   align-items: center;
+   margin-top: 1rem;
+ }
+
+ .car-price-section .car-price {
+   font-size: 1.8rem;
+   font-weight: 700;
+   color: var(--highlight-text);
+ }
+
+ .car-price-section .car-installment {
+   font-size: 0.8rem;
+   color: var(--muted-text);
+ }
+
+ .car-actions {
+   display: flex;
+   gap: 0.8rem;
+ }
+
+ #btn-primary {
+   flex: 1;
+   padding: 0.8rem;
+   background-color: var(--highlight-bg);
+   color: var(--button-text);
+   border: none;
+   border-radius: 5px;
+   font-weight: 600;
+   font-size: 0.9rem;
+   cursor: pointer;
+   transition: background-color 0.3s;
+ }
+
+ #btn-primary:hover {
+   background-color: #cc0000;
+ }
+
+ #btn-secondary {
+   flex: 1;
+   padding: 0.8rem;
+   background-color: var(--header-bg);
+   color: var(--button-text);
+   border: none;
+   border-radius: 5px;
+   font-weight: 600;
+   font-size: 0.9rem;
+   cursor: pointer;
+   transition: background-color 0.3s;
+ }

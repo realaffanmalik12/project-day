@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOLKSWAGEN</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity=""
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+<style>
+    :root {
+        --primary-bg: #fff;
+        --secondary-bg: #fef9f3;
+        --header-bg: #000;
+        --highlight-bg: #C3002F;
+        --card-bg: #2d2d2d;
+        --primary-text: #222;
+        --secondary-text: #555;
+        --highlight-text: #C3002F;
+        --white-text: #fff;
+        --button-text: #fff;
+        --muted-text: #999;
+        --nissan-crimson: #C3002F;
+        --nissan-orange: #FF6B35;
+        --nissan-gold: #FFA500;
+        --nissan-dark: #1a1a1a;
+        --nissan-cream: #FFF8E7;
+        --font-family: "Poppins", Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: var(--font-family);
+        background: var(--secondary-bg);
+        color: var(--primary-text);
+    }
+
+    /* Navbar & Footer */
+    nav {
+        background-color: #000;
+        font-family: var(--font-family);
+    }
+
+    nav>a {
+        font-family: var(--font-family);
+    }
+
+    footer {
+        background-color: #000;
+    }
+
+    .navbar-nav .nav-link {
+        font-weight: 500;
+        font-size: 16px;
+        color: #fff !important;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+        color: #ff0000 !important;
+    }
+
+    .dropdown-menu {
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .dropdown-item:hover {
+        background: #f8f9fa;
+        color: #e60000;
+    }
+
+    .btn-danger {
+        background-color: #ff0000 !important;
+        border: none;
+        border-radius: 6px;
+        transition: 0.3s;
+    }
+
+    .btn-danger:hover {
+        background-color: #cc0000 !important;
+    }
+
+    /* ----------------------------- */
+    /*  DROPDOWN — SHOW ON HOVER     */
+    /* ----------------------------- */
+    @media (min-width: 992px) {
+        .navbar .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+
+    /* ----------------------------- */
+    /*  ANIMATION & TRANSITION       */
+    /* ----------------------------- */
+    .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.5s ease-in-out;
+
+        /* Glossy / Glassmorphism effect */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.885);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 12px;
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        padding: 12px 0;
+    }
+
+    /* Dropdown item styling */
+    .dropdown-item {
+        color: #000;
+        font-weight: 500;
+        padding: 10px 20px;
+        transition: 0.25s ease;
+    }
+
+    /* Hover effect */
+    .dropdown-item:hover {
+        background: rgba(255, 255, 255, 0.6);
+        color: #e60000;
+        backdrop-filter: blur(18px);
+        border-radius: 8px;
+    }
+
+    #upper-footer {
+
+        flex-direction: row;
+    }
+
+    i:hover {
+        color: #e60000;
+    }
+
+    p,
+    h4 {
+        color: var(--muted-text);
+        /* font-size: 0.95rem; */
+    }
+
+    /* Navbar & Footer */
+
+    /* Breadcrumb */
+    .breadcrumb-section {
+        background: var(--primary-bg);
+        padding: 0.8rem 0;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .breadcrumb {
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        font-size: 0.9rem;
+    }
+
+    .breadcrumb-item a {
+        color: #666;
+        text-decoration: none;
+    }
+
+    .breadcrumb-item a:hover {
+        color: var(--nissan-crimson);
+    }
+
+    .breadcrumb-item.active {
+        color: var(--primary-text);
+        font-weight: 600;
+    }
+
+    /* Main Content */
+    .main-content {
+        padding: 3rem 0;
+    }
+
+    /* Model Header */
+    .model-header {
+        background: var(--primary-bg);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 2rem;
+    }
+
+    .model-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--nissan-crimson), var(--nissan-orange));
+        color: var(--button-text);
+        padding: 0.4rem 1.2rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+
+    .model-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--nissan-dark);
+        margin-bottom: 0.5rem;
+    }
+
+    .model-subtitle {
+        font-size: 1.1rem;
+        color: var(--secondary-text);
+        margin-bottom: 1.5rem;
+    }
+
+    .model-price {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--nissan-crimson);
+        margin-bottom: 1.5rem;
+    }
+
+    .price-label {
+        font-size: 0.9rem;
+        color: var(--muted-text);
+        font-weight: 400;
+    }
+
+    /* Image Slider */
+    .image-slider {
+        background: var(--primary-bg);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 2rem;
+    }
+
+    .carousel-inner {
+        border-radius: 10px;
+    }
+
+    .carousel-item {
+        height: 450px;
+        background: linear-gradient(135deg, var(--nissan-cream) 0%, #FFE4CC 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel-item .car-icon {
+        font-size: 12rem;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: var(--nissan-crimson);
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        padding: 0.5rem;
+    }
+
+    /* Available Colors */
+    .colors-section {
+        background: var(--primary-bg);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 2rem;
+    }
+
+    .section-heading {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--nissan-dark);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 3px solid var(--nissan-crimson);
+    }
+
+    .color-options {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .color-item {
+        text-align: center;
+    }
+
+    .color-circle {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin: 0 auto 0.5rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 3px solid var(--primary-bg);
+        outline: 2px solid transparent;
+    }
+
+    .color-circle:hover {
+        transform: scale(1.15);
+        outline-color: var(--nissan-orange);
+    }
+
+    .color-name {
+        font-size: 0.85rem;
+        color: var(--secondary-text);
+        font-weight: 500;
+    }
+
+    /* Key Specifications */
+    .specs-section {
+        background: var(--primary-bg);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 2rem;
+    }
+
+    .specs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-top: 1.5rem;
+    }
+
+    .spec-card {
+        text-align: center;
+        padding: 1.5rem;
+        background: linear-gradient(135deg, var(--nissan-cream) 0%, #FFE4CC 100%);
+        border-radius: 10px;
+        transition: all 0.3s;
+    }
+
+    .spec-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(195, 0, 47, 0.2);
+    }
+
+    .spec-icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .spec-label {
+        font-size: 0.85rem;
+        color: var(--secondary-text);
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    .spec-value {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--nissan-dark);
+    }
+
+    /* Overview Section */
+    .overview-section {
+        background: var(--primary-bg);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 2rem;
+    }
+
+    .overview-section p {
+        color: var(--secondary-text);
+        line-height: 1.8;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Features Section */
+    .features-section {
+        background: var(--primary-bg);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 2rem;
+    }
+
+    .feature-item {
+        display: flex;
+        align-items: start;
+        gap: 1rem;
+        padding: 1rem;
+        background: var(--secondary-bg);
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        transition: all 0.3s;
+    }
+
+    .feature-item:hover {
+        background: var(--nissan-cream);
+        transform: translateX(5px);
+    }
+
+    .feature-icon {
+        font-size: 2rem;
+        color: var(--nissan-crimson);
+        flex-shrink: 0;
+    }
+
+    .feature-content h5 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--nissan-dark);
+        margin-bottom: 0.3rem;
+    }
+
+    .feature-content p {
+        font-size: 0.9rem;
+        color: var(--secondary-text);
+        margin: 0;
+    }
+
+    /* Technical Specifications */
+    .technical-specs {
+        background: var(--primary-bg);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 2rem;
+    }
+
+    .specs-table {
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+
+    .specs-table tr {
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .specs-table tr:last-child {
+        border-bottom: none;
+    }
+
+    .specs-table td {
+        padding: 1rem 0;
+        font-size: 0.95rem;
+    }
+
+    .specs-table td:first-child {
+        font-weight: 600;
+        color: var(--nissan-dark);
+        width: 40%;
+    }
+
+    .specs-table td:last-child {
+        color: var(--secondary-text);
+    }
+
+    /* Contact Section */
+    .contact-section {
+        background: linear-gradient(135deg, var(--nissan-crimson) 0%, var(--nissan-orange) 100%);
+        padding: 3rem 2rem;
+        border-radius: 10px;
+        text-align: center;
+        color: var(--white-text);
+        box-shadow: 0 5px 25px rgba(195, 0, 47, 0.3);
+        margin-bottom: 2rem;
+    }
+
+    .contact-section h3 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .contact-section p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+    }
+
+    .btn-contact {
+        background: var(--white-text);
+        color: var(--nissan-crimson);
+        padding: 1rem 3rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+        border: none;
+        border-radius: 8px;
+        transition: all 0.3s;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-contact:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        color: var(--nissan-crimson);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .model-title {
+            font-size: 2rem;
+        }
+
+        .carousel-item {
+            height: 300px;
+        }
+
+        .carousel-item .car-icon {
+            font-size: 8rem;
+        }
+
+        .specs-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        header nav a {
+            margin: 0 0.5rem;
+            font-size: 0.85rem;
+        }
+    }
+
+    footer {
+        background: #000;
+        text-align: center;
+    }
+
+    footer p:hover {
+        color: red;
+    }
+</style>
+</head>
+
+<body>
+    <!-- Navbar & Footer-->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+
+            <!-- LOGO -->
+            <a class="navbar-brand d-flex align-items-center" href="Home.html">
+                <img src="logo.png" alt="Carvan Logo" height="85">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- NAV CONTENT -->
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <!-- LEFT NAV ITEMS -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+                    <!-- Brands Dropdown -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link " href="#" id="brandsDropdown" role="button" data-bs-toggle="dropdown">
+                            Brands
+                        </a>
+
+                    </li>
+
+                    <!-- Range of Cars Dropdown -->
+                    <li class="nav-item dropdown mx-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="rangeDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            Range of Cars
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Small Car</a></li>
+                            <li><a class="dropdown-item" href="#">Sedan</a></li>
+                            <li><a class="dropdown-item" href="#">Van</a></li>
+                            <li><a class="dropdown-item" href="#">SUV</a></li>
+                            <li><a class="dropdown-item" href="#">Jeep</a></li>
+                            <li><a class="dropdown-item" href="#">Convertible</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="preownedcars.html">PreOwned Cars</a>
+                    </li>
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+
+                </ul>
+
+                <!-- Right Button -->
+                <a href="#" class="btn btn-danger px-4 py-2 fw-semibold">Post Ad</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar & Footer End -->
+
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb" style="background-color: #FFFFFF;">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="brands.html">Brands</a></li>
+                    <li class="breadcrumb-item"><a href="nissan.html">Nissan</a></li>
+                    <li class="breadcrumb-item active">Altima</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- Model Header -->
+            <div class="model-header">
+                <span class="model-badge">Midsize Sedan • Innovation That Excites</span>
+                <h1 class="model-title">Nissan Altima</h1>
+                <p class="model-subtitle">Bold Design Meets Intelligent Performance</p>
+                <div class="model-price">
+                    $26,300
+                    <span class="price-label">Starting MSRP</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Main Column -->
+                <div class="col-lg-12">
+                    <!-- Image Slider -->
+                    <div class="image-slider">
+                        <div id="carImageSlider" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carImageSlider" data-bs-slide-to="0"
+                                    class="active"></button>
+                                <button type="button" data-bs-target="#carImageSlider" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#carImageSlider" data-bs-slide-to="2"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="car-icon">🚗</div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="car-icon">🏎️</div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="car-icon">🚙</div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carImageSlider"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carImageSlider"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Available Colors -->
+                    <div class="colors-section">
+                        <h3 class="section-heading">Available Colors</h3>
+                        <div class="color-options">
+                            <div class="color-item">
+                                <div class="color-circle" style="background: #FFFFFF; border: 3px solid #ddd;"></div>
+                                <div class="color-name">Pearl White</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-circle" style="background: #1a1a1a;"></div>
+                                <div class="color-name">Super Black</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-circle" style="background: #C0C0C0;"></div>
+                                <div class="color-name">Brilliant Silver</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-circle" style="background: #8B0000;"></div>
+                                <div class="color-name">Scarlet Ember</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-circle" style="background: #2C5F7F;"></div>
+                                <div class="color-name">Deep Blue Pearl</div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-circle" style="background: #4A4A4A;"></div>
+                                <div class="color-name">Gun Metallic</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Specifications -->
+                    <div class="specs-section">
+                        <h3 class="section-heading">Key Specifications</h3>
+                        <div class="specs-grid">
+                            <div class="spec-card">
+                                <div class="spec-icon">⚙️</div>
+                                <div class="spec-label">Engine</div>
+                                <div class="spec-value">2.5L I4</div>
+                            </div>
+                            <div class="spec-card">
+                                <div class="spec-icon">⚡</div>
+                                <div class="spec-label">Power</div>
+                                <div class="spec-value">188 HP</div>
+                            </div>
+                            <div class="spec-card">
+                                <div class="spec-icon">⛽</div>
+                                <div class="spec-label">Fuel Economy</div>
+                                <div class="spec-value">39 MPG</div>
+                            </div>
+                            <div class="spec-card">
+                                <div class="spec-icon">🏁</div>
+                                <div class="spec-label">0-60 MPH</div>
+                                <div class="spec-value">7.6 sec</div>
+                            </div>
+                            <div class="spec-card">
+                                <div class="spec-icon">🔧</div>
+                                <div class="spec-label">Transmission</div>
+                                <div class="spec-value">Xtronic CVT</div>
+                            </div>
+                            <div class="spec-card">
+                                <div class="spec-icon">👥</div>
+                                <div class="spec-label">Seating</div>
+                                <div class="spec-value">5 Passengers</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Overview -->
+                    <div class="overview-section">
+                        <h3 class="section-heading">Overview</h3>
+                        <p>The Nissan Altima redefines what a midsize sedan can be with its perfect blend of striking
+                            design, intelligent technology, and efficient performance. Powered by a responsive 2.5-liter
+                            engine producing 188 horsepower, the Altima delivers confident acceleration while achieving
+                            an impressive 39 MPG on the highway, making every journey both thrilling and economical.</p>
+                        <p>Step into a cabin designed around you, featuring premium materials, available
+                            leather-appointed seats, and an intuitive layout that puts everything within easy reach. The
+                            advanced Nissan Intelligent Mobility suite includes ProPILOT Assist, which combines
+                            intelligent cruise control with steering assist to make highway driving more relaxing. The
+                            available 8-inch touchscreen with wireless Apple CarPlay and Android Auto keeps you
+                            connected while the available Bose Premium Audio system transforms your commute into a
+                            concert hall.</p>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="features-section">
+                        <h3 class="section-heading">Key Features</h3>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">🤖</div>
+                            <div class="feature-content">
+                                <h5>ProPILOT Assist</h5>
+                                <p>Advanced driver assistance technology combines adaptive cruise control with lane
+                                    centering to reduce driver fatigue on long highway journeys.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">🎵</div>
+                            <div class="feature-content">
+                                <h5>Bose Premium Audio</h5>
+                                <p>9-speaker Bose Personal Plus audio system with UltraNearfield speakers in the
+                                    driver's headrest delivers an immersive listening experience.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">🛡️</div>
+                            <div class="feature-content">
+                                <h5>Nissan Safety Shield 360</h5>
+                                <p>Comprehensive suite of six advanced safety technologies including Automatic Emergency
+                                    Braking, Blind Spot Warning, and Rear Cross Traffic Alert.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">⚙️</div>
+                            <div class="feature-content">
+                                <h5>Intelligent All-Wheel Drive</h5>
+                                <p>Available AWD system automatically adjusts power distribution between front and rear
+                                    wheels for enhanced traction in challenging conditions.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">📱</div>
+                            <div class="feature-content">
+                                <h5>NissanConnect Services</h5>
+                                <p>Remote access features let you start your engine, lock/unlock doors, and locate your
+                                    vehicle from your smartphone.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">☀️</div>
+                            <div class="feature-content">
+                                <h5>Power Moonroof</h5>
+                                <p>One-touch power moonroof with tilt feature brings natural light and fresh air into
+                                    the spacious cabin.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">🔑</div>
+                            <div class="feature-content">
+                                <h5>Intelligent Key with Push Button Start</h5>
+                                <p>Convenient keyless entry and ignition system lets you access and start your Altima
+                                    without removing the key from your pocket.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">❄️</div>
+                            <div class="feature-content">
+                                <h5>Heated Steering Wheel & Seats</h5>
+                                <p>Available heated front seats and leather-wrapped heated steering wheel provide
+                                    comfort during cold weather driving.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Specifications -->
+                    <div class="technical-specs">
+                        <h3 class="section-heading">Technical Specifications</h3>
+                        <table class="specs-table">
+                            <tbody>
+                                <tr>
+                                    <td>Engine Type</td>
+                                    <td>2.5L DOHC 16-Valve 4-Cylinder</td>
+                                </tr>
+                                <tr>
+                                    <td>Horsepower</td>
+                                    <td>188 HP @ 6,000 RPM</td>
+                                </tr>
+                                <tr>
+                                    <td>Torque</td>
+                                    <td>180 lb-ft @ 3,600 RPM</td>
+                                </tr>
+                                <tr>
+                                    <td>Transmission</td>
+                                    <td>Xtronic CVT (Continuously Variable Transmission)</td>
+                                </tr>
+                                <tr>
+                                    <td>Drivetrain</td>
+                                    <td>Front-Wheel Drive / Available All-Wheel Drive</td>
+                                </tr>
+                                <tr>
+                                    <td>Fuel Economy (City/Highway)</td>
+                                    <td>28 / 39 MPG (FWD) | 26 / 36 MPG (AWD)</td>
+                                </tr>
+                                <tr>
+                                    <td>Fuel Tank Capacity</td>
+                                    <td>16.2 gallons</td>
+                                </tr>
+                                <tr>
+                                    <td>Seating Capacity</td>
+                                    <td>5 Passengers</td>
+                                </tr>
+                                <tr>
+                                    <td>Cargo Volume</td>
+                                    <td>15.4 cubic feet</td>
+                                </tr>
+                                <tr>
+                                    <td>Curb Weight</td>
+                                    <td>3,208 lbs (FWD) | 3,462 lbs (AWD)</td>
+                                </tr>
+                                <tr>
+                                    <td>Wheelbase</td>
+                                    <td>111.2 inches</td>
+                                </tr>
+                                <tr>
+                                    <td>Length x Width x Height</td>
+                                    <td>192.9" x 72.9" x 56.9"</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Contact Section -->
+                    <div class="contact-section">
+                        <h3>Experience Innovation That Excites</h3>
+                        <p>Schedule a test drive today and discover why the Nissan Altima is the smart choice for your
+                            lifestyle.</p>
+                        <a href="contact.html" class="btn-contact">Contact for Booking</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start  text-white">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="https://www.facebook.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://x.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.google.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="https://www.instagram.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Browse
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">All Cars</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">PreOwned Cars</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">Car Type</a>
+                        </p>
+
+                    </div>
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Company
+                        </h6>
+                        <p>
+                            <a href="#!" class=" text-decoration-none text-reset">About Carvan</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">Contact Support</a>
+                        </p>
+                        <p>
+                            <a href="#!" class=" text-decoration-none text-reset">Pricing</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            For Sellers
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">Pricing</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">Settings</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">Orders</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Carvan. All rights reserved. Quality Cars, Trusted Deals.
+            <a class='text-reset fw-bold text-decoration-none ' href='/home'>Carvan</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+</body>
+
+</html>

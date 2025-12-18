@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity=""
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #fff;
+            --secondary-bg: #f7f7f7;
+            --header-bg: #000;
+            --highlight-bg: #e60000;
+            --card-bg: #1a1a1a;
+            --primary-text: #222;
+            --secondary-text: #555;
+            --highlight-text: #e60000;
+            --white-text: #fff;
+            --button-text: #fff;
+            --muted-text: #999;
+            --font-family: "Poppins", Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-family);
+        }
+
+        /* ----------------------------- */
+        /*         Navbar Start          */
+        /* ----------------------------- */
+        nav {
+            background-color: #000;
+            font-family: var(--font-family);
+        }
+
+        nav>a {
+            font-family: var(--font-family);
+        }
+
+        footer {
+            background-color: #000;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            font-size: 16px;
+            color: #fff !important;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            color: #ff0000 !important;
+        }
+
+        .dropdown-menu {
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .dropdown-item:hover {
+            background: #f8f9fa;
+            color: #e60000;
+        }
+
+        .btn-danger {
+            background-color: #ff0000 !important;
+            border: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn-danger:hover {
+            background-color: #cc0000 !important;
+        }
+
+        @media (min-width: 992px) {
+            .navbar .dropdown:hover .dropdown-menu {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+        }
+
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.5s ease-in-out;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.885);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            padding: 12px 0;
+        }
+
+        .dropdown-item {
+            color: #000;
+            font-weight: 500;
+            padding: 10px 20px;
+            transition: 0.25s ease;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(255, 255, 255, 0.6);
+            color: #e60000;
+            backdrop-filter: blur(18px);
+            border-radius: 8px;
+        }
+
+        #upper-footer {
+            flex-direction: row;
+        }
+
+        i:hover {
+            color: #e60000;
+        }
+
+        p,
+        h4 {
+            color: var(--muted-text);
+        }
+
+        footer p:hover {
+            color: red;
+        }
+
+        .dropdown-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            display: block;
+            z-index: 2000;
+        }
+
+        /* ----------------------------- */
+        /*         Navbar End            */
+        /* ----------------------------- */
+
+        /* Hero Section */
+        #hero-sec {
+            background-color: var(--secondary-bg);
+            padding: 10px 30px 60px 30px;
+            text-align: center;
+        }
+
+        #hero-heading span {
+            color: var(--highlight-text);
+            font-family: var(--font-family);
+            font-weight: 900;
+            font-size: 60px;
+            line-height: 1.2;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        #hero-cont #hero-heading {
+            font-weight: 900;
+            font-size: 60px;
+            color: var(--header-bg);
+            line-height: 1.2;
+        }
+
+        #hero-cont h5 {
+            font-size: 20px;
+            color: var(--highlight-text);
+        }
+
+        #hero-description {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: var(--muted-text);
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .search-container {
+            max-width: 700px;
+            width: 100%;
+            margin: 50px auto;
+        }
+
+        .search-wrapper {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 18px 140px 18px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.2);
+        }
+
+        .search-input::placeholder {
+            color: #8b8b8b;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #dc2626;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .search-btn:hover {
+            background-color: #b91c1c;
+        }
+
+        .search-btn i {
+            font-size: 14px;
+        }
+
+        #hero-achievements {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        #hero-achievements div {
+            border: 1px solid #fff;
+            background-color: var(--primary-bg);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        #hero-achievements h6 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--highlight-text);
+        }
+
+        #hero-achievements p {
+            font-size: 16px;
+            color: var(--muted-text);
+            margin: 0;
+        }
+
+        #hero-achievements div:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e60000;
+        }
+
+        /* Featured Section */
+        .featured-section {
+            padding: 60px 0;
+            background-color: var(--primary-bg);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 0;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .view-all-link {
+            color: #dc2626;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .view-all-link:hover {
+            color: #b91c1c;
+        }
+
+        .car-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .car-image {
+            position: relative;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .car-image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .car-image.premium {
+            background: linear-gradient(135deg, #3d3d3d 0%, #2a2a2a 100%);
+        }
+
+        .car-image.luxury {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+        }
+
+        .car-image.sports {
+            background: linear-gradient(135deg, #4a2c2c 0%, #2d1a1a 100%);
+        }
+
+        .car-icon {
+            font-size: 80px;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        .badge-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #dc2626;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .car-info {
+            padding: 20px;
+        }
+
+        .car-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .car-details {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .car-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #dc2626;
+        }
+
+        /* Ad Section */
+        #ad-section {
+            padding: 80px 16px;
+            background-color: var(--header-bg);
+            color: var(--white-text);
+            font-family: var(--font-family);
+        }
+
+        .ad-sec-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .ad-sec-header h2 {
+            font-size: 2.625rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .ad-sec-header p {
+            font-size: 1.125rem;
+            color: #cccccc;
+            opacity: 1;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        .ad-sec-content .col-lg-4 {
+            margin-bottom: 40px;
+        }
+
+        .ad-sec-content h2 {
+            font-size: 1.625rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .ad-sec-content p {
+            color: #cccccc;
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        .icon {
+            width: 100px;
+            height: 100px;
+            background-color: #dc2626;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(220, 38, 38, 0.5);
+        }
+
+        /* CTA Section */
+        #cta-section {
+            padding: 80px 16px;
+            background-color: #f5f5f5;
+        }
+
+        .cta-card {
+            padding: 32px;
+            border-radius: 16px;
+            text-align: center;
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .cta-card>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .bg-gradient-red {
+            background: linear-gradient(135deg, var(--highlight-bg) 0%, #000000 100%);
+        }
+
+        .bg-gradient-dark {
+            background: linear-gradient(135deg, #000000 0%, #000000 100%);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .cta-card h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-family: var(--font-family);
+        }
+
+        .cta-card p {
+            font-size: 1.125rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            line-height: 1.6;
+            max-width: 400px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: white;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .cta-btn:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            transform: scale(1.05);
+        }
+
+        /* ----------------------------- */
+        /*     RESPONSIVE MEDIA QUERIES  */
+        /* ----------------------------- */
+
+        @media (max-width: 991px) {
+            .cta-card {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Hero Section */
+            #hero-sec {
+                padding: 10px 15px 40px 15px;
+            }
+
+            #hero-cont #hero-heading {
+                font-size: 36px;
+            }
+
+            #hero-heading span {
+                font-size: 36px;
+            }
+
+            #hero-description {
+                font-size: 16px;
+            }
+
+            .search-input {
+                padding: 14px 110px 14px 16px;
+                font-size: 14px;
+            }
+
+            .search-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            #hero-achievements {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            #hero-achievements h6 {
+                font-size: 22px;
+            }
+
+            #hero-achievements p {
+                font-size: 14px;
+            }
+
+            /* Featured Section */
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section-header h2 {
+                font-size: 24px;
+            }
+
+            /* Ad Section */
+            .ad-sec-header h2 {
+                font-size: 2rem;
+            }
+
+            .ad-sec-content .col-lg-4 {
+                margin-bottom: 50px;
+            }
+
+            /* CTA Section */
+            #cta-section {
+                padding: 60px 16px;
+            }
+
+            .cta-card {
+                padding: 40px 20px;
+                min-height: 250px;
+            }
+
+            .cta-card h2 {
+                font-size: 1.75rem;
+            }
+
+            .cta-card p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #hero-cont #hero-heading {
+                font-size: 28px;
+            }
+
+            #hero-heading span {
+                font-size: 28px;
+            }
+
+            #hero-description {
+                font-size: 14px;
+            }
+
+            .search-container {
+                margin: 30px auto;
+            }
+
+            .search-input {
+                padding: 12px 12px 12px 12px;
+            }
+
+            .search-btn {
+                position: static;
+                transform: none;
+                width: 100%;
+                margin-top: 10px;
+                justify-content: center;
+            }
+
+            #hero-achievements {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .section-header h2 {
+                font-size: 20px;
+            }
+
+            .ad-sec-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .cta-card h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark  ">
+        <div class="container">
+
+            
+            <a class="navbar-brand d-flex align-items-center" href="home.html">
+                <img src="Pictures\logo.png" alt="Carvan Logo" height="85">
+            </a>
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    
+                    <li class="nav-item mx-2">
+                        <a class="nav-link " href="Brands.html" id="brandsDropdown" role="button">
+                            Brands
+                        </a>
+
+                    </li>
+
+                    
+                    <li class="nav-item dropdown mx-2">
+                        <a class="nav-link dropdown-toggle" href="Range-of-cars.html" id="rangeDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            Range of Cars
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Range-of-cars.html">All Ranges</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Small Car">Small Car</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Sedan">Sedan</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Van">Van</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=SUV">SUV</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Jeep">Jeep</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="PreOwned-Cars.html">PreOwned Cars</a>
+                    </li>
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="Aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="Contact.html">Contact Us</a>
+                    </li>
+
+                </ul>
+
+
+            </div>
+        </div>
+    </nav>
+    <!-- Hero -->
+    <section id="hero-sec" class="">
+        <div id="hero-cont" class="container">
+            <div>
+                <p id="hero-heading">Quality Cars,<span> Trusted <br> Deals</span></p>
+                <h4 class="mb-4" id="hero-description">A marketplace for new and pre-owned vehicles. Browse thousands of
+                    verified
+                    <br>
+                    listings, connect with trusted sellers, and find your perfect car with confidence.
+                </h4>
+                <!-- <div class="search-container">
+                    <div class="search-wrapper">
+                        <input type="text" class="search-input" id="searchInput"
+                            placeholder="Search by brand, model, or price range...">
+                        <button class="search-btn" id="searchBtn">
+                            <i class="fas fa-search"></i>
+                            Search
+                        </button>
+                    </div>
+                </div> -->
+                <div class="container">
+                    <div class="row" id="hero-achievements">
+                        <div class=" ">
+                            <h6>50,000+</h6>
+                            <p>Active Listings</p>
+                        </div>
+                        <div class="">
+                            <h6>100K+</h6>
+                            <p>Happy Buyers</p>
+                        </div>
+                        <div class="">
+                            <h6>5000+</h6>
+                            <p>Verified Sellers</p>
+                        </div>
+                        <div class="">
+                            <h6>10+</h6>
+                            <p>Cities Covered</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PreOwned Cars Listings Section -->
+    <div class="featured-section">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2>Featured Listings</h2>
+                    <p class="section-subtitle">Popular cars from verified sellers</p>
+                </div>
+                <a href="PreOwned-Cars.html" class="view-all-link">
+                    View All
+                    <span>›</span>
+                </a>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="car-card">
+                        <div class="car-image">
+                            <img src="Pictures/tesla model-3.jpg" alt="" height="200px" width="300px">
+                            <span class="badge-tag">Electric</span>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">2023 Tesla Model 3</h3>
+                            <p class="car-details">2023 • 2.5K miles</p>
+                            <div class="car-price">$45,999</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="car-card">
+                        <div class="car-image premium">
+                            <img src="Pictures/BMW M440i.avif" alt="" height="200px" width="300px">
+                            <span class="badge-tag">Premium</span>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">2022 BMW M440i</h3>
+                            <p class="car-details">2022 • 15.2K miles</p>
+                            <div class="car-price">$38,500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="car-card">
+                        <div class="car-image luxury">
+                            <img src="Pictures/mercedes c63.jpg" alt="" height="200px" width="300px">
+                            <span class="badge-tag">Luxury</span>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">2024 Mercedes-Benz C63</h3>
+                            <p class="car-details">2024 • 1.2K miles</p>
+                            <div class="car-price">$68,900</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="car-card">
+                        <div class="car-image sports">
+                            <img src="Pictures/2023 Porsche 911 Carrera.jpg" alt="" height="200px" width="300px">
+                            <span class="badge-tag">Sports</span>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">2023 Porsche 911 Carrera</h3>
+                            <p class="car-details">2023 • 8.5K miles</p>
+                            <div class="car-price">$95,000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ad Section -->
+    <section id="ad-section" class="">
+        <div class="container mx-auto">
+            <div class="ad-sec-header">
+                <h2 class="text-4xl">How It Works</h2>
+                <p class="text-lg mx-auto">Simple, transparent, and secure. Get your dream car in just a few steps.</p>
+            </div>
+            <div class="ad-sec-content">
+                <div class="row mx-auto justify-content-center">
+                    <div class="col-lg-4 text-center">
+                        <div class="icon">
+                            <i class="bi bi-search" style="font-size: 45px; color: white;"></i>
+                        </div>
+                        <h2 class="text-xl font-bold mb-2">Browse</h2>
+                        <p class="opacity-75">Explore thousands of verified listings with detailed specs and photos.</p>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="icon">
+                            <i class="bi bi-shield-fill-check" style="font-size: 45px; color: white;"></i>
+                        </div>
+                        <h2 class="text-xl font-bold mb-2">Secure</h2>
+                        <p class="opacity-75">All transactions are protected with our buyer guarantee program.</p>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="icon">
+                            <i class="bi bi-car-front-fill" style="font-size: 45px; color: white;"></i>
+                        </div>
+                        <h2 class="text-xl font-bold mb-2">Drive</h2>
+                        <p class="opacity-75">Complete your purchase and drive home in your new car today.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta-section">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <!-- Looking to Buy Card -->
+                <div class="col-lg-4 col-md-5">
+                    <div class="cta-card bg-gradient-red">
+                        <h2> Buy a new one?</h2>
+                        <p>Explore thousands of quality vehicles from trusted brands.</p>
+                        <a href="Brands.html" class="cta-btn">Browse Cars</a>
+                    </div>
+                </div>
+
+                <!-- Ready to Sell Card -->
+                <div class="col-lg-4 col-md-5">
+                    <div class="cta-card bg-gradient-dark">
+                        <h2>Browse Used Cars</h2>
+                        <p>Trusted Pre-Owned Cars at Honest Prices</p>
+                        <a href="PreOwned-Cars.html" class="cta-btn">PreOwned Cars</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start  text-white">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="https://www.facebook.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://x.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.google.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="https://www.instagram.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Browse
+                        </h6>
+                        <p>
+                            <a href="Brands.html" class="text-decoration-none text-reset">All Cars</a>
+                        </p>
+                        <p>
+                            <a href="PreOwned-Cars.html" class="text-decoration-none text-reset">PreOwned Cars</a>
+                        </p>
+                        <p>
+                            <a href="Range-of-cars.html" class="text-decoration-none text-reset">Car Type</a>
+                        </p>
+
+                    </div>
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Company
+                        </h6>
+                        <p>
+                            <a href="Aboutus.html" class=" text-decoration-none text-reset">About Carvan</a>
+                        </p>
+                        <p>
+                            <a href="Contact.html" class="text-decoration-none text-reset">Contact Support</a>
+                        </p>
+                        <p>
+                            <a href="#" class=" text-decoration-none text-reset">Home</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            For Sellers
+                        </h6>
+                        <p>
+                            <a href="Range-of-cars.html?category=Van" class="text-decoration-none text-reset">Vans</a>
+                        </p>
+                        <p>
+                            <a href="Range-of-cars.html?category=Sedan"
+                                class="text-decoration-none text-reset">Sedan</a>
+                        </p>
+                        <p>
+                            <a href="Range-of-cars.html?category=Small Car"
+                                class="text-decoration-none text-reset">Small Cars</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i>511, Suite # 202-203, Main Shahra-e-Faisal, near Lal Kothi
+                            (house), Karachi, 75400</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Carvan. All rights reserved. Quality Cars, Trusted Deals.
+            <a class='text-reset fw-bold text-decoration-none ' href='/home'>Carvan</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+
+</body>
+
+</html>

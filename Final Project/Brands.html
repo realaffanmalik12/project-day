@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brands</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary-bg: #fff;
+            --secondary-bg: #f7f7f7;
+            --header-bg: #000;
+            --highlight-bg: #e60000;
+            --card-bg: #1a1a1a;
+            --primary-text: #222;
+            --secondary-text: #555;
+            --highlight-text: #e60000;
+            --white-text: #fff;
+            --button-text: #fff;
+            --muted-text: #999;
+            --font-family: "Poppins", Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-family);
+        }
+
+        /* Navbar & Footer */
+        nav {
+            background-color: #000;
+            font-family: var(--font-family);
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav>a {
+            font-family: var(--font-family);
+        }
+
+        footer {
+            background-color: #000;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            font-size: 16px;
+            color: #fff !important;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            color: #ff0000 !important;
+        }
+
+        .dropdown-menu {
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .dropdown-item:hover {
+            background: #f8f9fa;
+            color: #e60000;
+        }
+
+        .btn-danger {
+            background-color: #ff0000 !important;
+            border: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn-danger:hover {
+            background-color: #cc0000 !important;
+        }
+
+        /* ----------------------------- */
+        /*  DROPDOWN — SHOW ON HOVER     */
+        /* ----------------------------- */
+        @media (min-width: 992px) {
+            .navbar .dropdown:hover .dropdown-menu {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+        }
+
+        /* ----------------------------- */
+        /*  ANIMATION & TRANSITION       */
+        /* ----------------------------- */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.5s ease-in-out;
+
+            /* Glossy / Glassmorphism effect */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.885);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 12px;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            padding: 12px 0;
+        }
+
+        /* Dropdown item styling */
+        .dropdown-item {
+            color: #000;
+            font-weight: 500;
+            padding: 10px 20px;
+            transition: 0.25s ease;
+        }
+
+        /* Hover effect */
+        .dropdown-item:hover {
+            background: rgba(255, 255, 255, 0.6);
+            color: #e60000;
+            backdrop-filter: blur(18px);
+            border-radius: 8px;
+        }
+
+        #upper-footer {
+
+            flex-direction: row;
+        }
+
+        i:hover {
+            color: #e60000;
+        }
+
+        p,
+        h4 {
+            color: var(--muted-text);
+            /* font-size: 0.95rem; */
+        }
+        .dropdown-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            display: block;
+            z-index: 2000;
+        }
+
+        /* Navbar & Footer */
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--card-bg) 0%, var(--header-bg) 100%);
+            color: var(--white-text);
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-section h1 span {
+            color: var(--highlight-bg);
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: var(--muted-text);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section End */
+
+        /* Search Bar */
+        .search-container {
+            max-width: 700px;
+            width: 100%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .search-container h3 {
+            color: #000;
+            font-weight: 600;
+        }
+
+        .search-wrapper {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 18px 140px 18px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.2);
+        }
+
+        .search-input::placeholder {
+            color: #8b8b8b;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #dc2626;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .search-btn:hover {
+            background-color: #b91c1c;
+        }
+
+        .search-btn i {
+            font-size: 14px;
+        }
+
+        /* Search Bar End */
+
+        /* All Brands */
+        .container-brands {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 64px 5%;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-text);
+            margin-bottom: 48px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 16px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--highlight-bg);
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .row {
+            gap: 20x;
+        }
+
+        .brand-card {
+            background-color: var(--primary-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .brand-header {
+            background-color: var(--card-bg);
+            padding: 32px;
+            text-align: center;
+            position: relative;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand-logo {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--white-text);
+            letter-spacing: 1px;
+        }
+
+        .brand-body {
+            padding: 32px;
+            background-color: var(--primary-bg);
+        }
+
+        .brand-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-text);
+            margin-bottom: 8px;
+        }
+
+        .brand-tagline {
+            color: var(--highlight-text);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .brand-description {
+            color: var(--secondary-text);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .models-section {
+            border-top: 1px solid #eee;
+            padding-top: 24px;
+            margin-top: 16px;
+        }
+
+        .models-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-text);
+            margin-bottom: 16px;
+        }
+
+        .models-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .model-tag {
+            background-color: var(--secondary-bg);
+            color: var(--secondary-text);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .model-tag:hover {
+            background-color: var(--highlight-bg);
+            color: var(--white-text);
+        }
+
+        .view-models-btn {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 0.7rem 1.5rem;
+            background-color: var(--highlight-bg);
+            color: var(--button-text);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .view-models-btn:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+
+        .brand-stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 16px 0;
+            border-top: 1px solid #eee;
+            margin-top: 24px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--highlight-text);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--muted-text);
+            margin-top: 0.2rem;
+        }
+
+        /* All Brands End */
+
+        footer p:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark  ">
+        <div class="container">
+
+            
+            <a class="navbar-brand d-flex align-items-center" href="home.html">
+                <img src="Pictures\logo.png" alt="Carvan Logo" height="85">
+            </a>
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    
+                    <li class="nav-item mx-2">
+                        <a class="nav-link " href="Brands.html" id="brandsDropdown" role="button">
+                            Brands
+                        </a>
+
+                    </li>
+
+                    
+                    <li class="nav-item dropdown mx-2">
+                        <a class="nav-link dropdown-toggle" href="Range-of-cars.html" id="rangeDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            Range of Cars
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Range-of-cars.html">All Ranges</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Small Car">Small Car</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Sedan">Sedan</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Van">Van</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=SUV">SUV</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Jeep">Jeep</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="PreOwned-Cars.html">PreOwned Cars</a>
+                    </li>
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="Aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="Contact.html">Contact Us</a>
+                    </li>
+
+                </ul>
+
+
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1>Explore Top <span>Brands</span></h1>
+        <p>Discover vehicles from the world's leading automotive manufacturers</p>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- All Brands -->
+    <div class="container-brands">
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <h3>Find Your Brand</h3>
+            <p>Search through our extensive collection of automotive brands</p>
+            <div class="search-wrapper">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search for brands or models...">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                    Search
+                </button>
+            </div>
+        </div>
+        <!-- Search Bar End -->
+
+        <h2 class="section-title">Our Brand Partners</h2>
+
+        <div class="brands-grid">
+            <!-- Toyota -->
+            <div class="brand-card ">
+                <div class="brand-header" style="background-color: #D8D8D8;">
+                    <div class="brand-logo"><img style=" height: 180px; margin: 56px 0 0;"
+                            src="Pictures/Toyota-Logo.png"></div>
+                </div>
+                <div class="brand-body">
+                    <h3 class="brand-name">Toyota</h3>
+                    <p class="brand-tagline">Let's Go Places</p>
+                    <p class="brand-description">
+                        Toyota is a global leader in automotive manufacturing, renowned for reliability, innovation, and
+                        quality. From efficient hybrids to rugged SUVs, Toyota offers vehicles that stand the test of
+                        time.
+                    </p>
+                    <div class="models-section">
+                        <h4 class="models-title">Popular Models</h4>
+                        <div class="models-list">
+                            <span class="model-tag">Camry</span>
+                            <span class="model-tag">Corolla</span>
+                            <span class="model-tag">RAV4</span>
+                            <span class="model-tag">Highlander</span>
+                            <span class="model-tag">Land Cruiser</span>
+                            <span class="model-tag">Prius</span>
+                        </div>
+                        <a href="Toyota.html" class="view-models-btn">View All Models →</a>
+                    </div>
+                    <div class="brand-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Models</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.8</div>
+                            <div class="stat-label">Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Honda -->
+            <div class="brand-card ">
+                <div class="brand-header" style="background-color: #EFEFEF;">
+                    <div class="brand-logo"><img style="margin: 37px; height: 130px; width: 250px"
+                            src="Pictures/Honda-Logo.png"></div>
+                </div>
+                <div class="brand-body">
+                    <h3 class="brand-name">Honda</h3>
+                    <p class="brand-tagline">The Power of Dreams</p>
+                    <p class="brand-description">
+                        Honda combines advanced engineering with practical design, delivering vehicles known for fuel
+                        efficiency, performance, and cutting-edge technology. Experience driving excellence with every
+                        Honda model.
+                    </p>
+                    <div class="models-section">
+                        <h4 class="models-title">Popular Models</h4>
+                        <div class="models-list">
+                            <span class="model-tag">Civic</span>
+                            <span class="model-tag">Accord</span>
+                            <span class="model-tag">CR-V</span>
+                            <span class="model-tag">Pilot</span>
+                            <span class="model-tag">HR-V</span>
+                            <span class="model-tag">City</span>
+                        </div>
+                        <a href="Honda.html" class="view-models-btn">View All Models →</a>
+                    </div>
+                    <div class="brand-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">20+</div>
+                            <div class="stat-label">Models</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.7</div>
+                            <div class="stat-label">Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mercedes-Benz -->
+            <div class="brand-card ">
+                <div class="brand-header" style="background-color: #1c1919;">
+                    <div class="brand-logo"><img style="margin: 15px 10px; height: 150px;"
+                            src="Pictures/Mercedes-Logo.png">
+                    </div>
+                </div>
+                <div class="brand-body">
+                    <h3 class="brand-name">Mercedes-Benz</h3>
+                    <p class="brand-tagline">The Best or Nothing</p>
+                    <p class="brand-description">
+                        Mercedes-Benz epitomizes luxury and performance. With a heritage of innovation and
+                        craftsmanship, each vehicle delivers unmatched comfort, technology, and prestige.
+                    </p>
+                    <div class="models-section">
+                        <h4 class="models-title">Popular Models</h4>
+                        <div class="models-list">
+                            <span class="model-tag">C-Class</span>
+                            <span class="model-tag">E-Class</span>
+                            <span class="model-tag">S-Class</span>
+                            <span class="model-tag">GLC</span>
+                            <span class="model-tag">GLE</span>
+                            <span class="model-tag">A-Class</span>
+                        </div>
+                        <a href="Mercedes.html" class="view-models-btn">View All Models →</a>
+                    </div>
+                    <div class="brand-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">30+</div>
+                            <div class="stat-label">Models</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.9</div>
+                            <div class="stat-label">Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BMW -->
+            <div class="brand-card ">
+                <div class="brand-header" style="background-color: #22588e;">
+                    <div class="brand-logo"><img style="margin: 15px 10px; height: 155px;" src="Pictures/BMW-Logo.png">
+                    </div>
+                </div>
+                <div class="brand-body">
+                    <h3 class="brand-name">BMW</h3>
+                    <p class="brand-tagline">The Ultimate Driving Machine</p>
+                    <p class="brand-description">
+                        BMW stands for exceptional driving dynamics and luxury. With precision engineering and
+                        innovative technology, BMW delivers the perfect balance of performance and sophistication.
+                    </p>
+                    <div class="models-section">
+                        <h4 class="models-title">Popular Models</h4>
+                        <div class="models-list">
+                            <span class="model-tag">3 Series</span>
+                            <span class="model-tag">5 Series</span>
+                            <span class="model-tag">7 Series</span>
+                            <span class="model-tag">X3</span>
+                            <span class="model-tag">X5</span>
+                            <span class="model-tag">iX</span>
+                        </div>
+                        <a href="BMW.html" class="view-models-btn">View All Models →</a>
+                    </div>
+                    <div class="brand-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">28+</div>
+                            <div class="stat-label">Models</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.8</div>
+                            <div class="stat-label">Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ford -->
+            <div class="brand-card ">
+                <div class="brand-header" style="background-color: #eaf0fa;">
+                    <div class="brand-logo"><img style="height: 160px; width: 330px; margin: 15px;"
+                            src="Pictures/Ford-Logo.png">
+                    </div>
+                </div>
+                <div class="brand-body">
+                    <h3 class="brand-name">Ford</h3>
+                    <p class="brand-tagline">Built Ford Tough</p>
+                    <p class="brand-description">
+                        Ford is synonymous with American automotive excellence. Known for tough trucks, reliable sedans,
+                        and innovative SUVs, Ford builds vehicles that work as hard as you do.
+                    </p>
+                    <div class="models-section">
+                        <h4 class="models-title">Popular Models</h4>
+                        <div class="models-list">
+                            <span class="model-tag">F-150</span>
+                            <span class="model-tag">Mustang</span>
+                            <span class="model-tag">Explorer</span>
+                            <span class="model-tag">Escape</span>
+                            <span class="model-tag">Bronco</span>
+                            <span class="model-tag">Ranger</span>
+                        </div>
+                        <a href="Ford.html" class="view-models-btn">View All Models →</a>
+                    </div>
+                    <div class="brand-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">22+</div>
+                            <div class="stat-label">Models</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.6</div>
+                            <div class="stat-label">Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audi -->
+            <div class="brand-card">
+                <div class="brand-header" style="background-color: #2f2d2d;">
+                    <div class="brand-logo"><img style="height: 110px; margin: 15px;" src="Pictures/Audi-Logo.png">
+                    </div>
+                </div>
+                <div class="brand-body">
+                    <h3 class="brand-name">Audi</h3>
+                    <p class="brand-tagline">Vorsprung durch Technik</p>
+                    <p class="brand-description">
+                        Audi represents progressive technology and elegant design. With Quattro all-wheel drive and
+                        premium interiors, Audi vehicles offer sophistication and superior performance.
+                    </p>
+                    <div class="models-section">
+                        <h4 class="models-title">Popular Models</h4>
+                        <div class="models-list">
+                            <span class="model-tag">A4</span>
+                            <span class="model-tag">A6</span>
+                            <span class="model-tag">Q5</span>
+                            <span class="model-tag">Q7</span>
+                            <span class="model-tag">e-tron</span>
+                            <span class="model-tag">A8</span>
+                        </div>
+                        <a href="Audi.html" class="view-models-btn">View All Models →</a>
+                    </div>
+                    <div class="brand-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">26+</div>
+                            <div class="stat-label">Models</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.8</div>
+                            <div class="stat-label">Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nissan -->
+            <div class="brand-card ">
+                <div class="brand-header" style="background-color: #63706d;">
+                    <div class="brand-logo"><img style="margin: 15px; height: 170px;" src="Pictures/Nissan-Logo.png">
+                    </div>
+                </div>
+                <div class="brand-body">
+                    <h3 class="brand-name">Nissan</h3>
+                    <p class="brand-tagline">Innovation That Excites</p>
+                    <p class="brand-description">
+                        Nissan delivers innovative vehicles that combine performance with value. From the legendary GT-R
+                        to practical crossovers, Nissan offers excitement and reliability.
+                    </p>
+                    <div class="models-section">
+                        <h4 class="models-title">Popular Models</h4>
+                        <div class="models-list">
+                            <span class="model-tag">Altima</span>
+                            <span class="model-tag">Sentra</span>
+                            <span class="model-tag">Rogue</span>
+                            <span class="model-tag">Pathfinder</span>
+                            <span class="model-tag">Kicks</span>
+                            <span class="model-tag">GT-R</span>
+                        </div>
+                        <a href="Nissan.html" class="view-models-btn">View All Models →</a>
+                    </div>
+                    <div class="brand-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">18+</div>
+                            <div class="stat-label">Models</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.5</div>
+                            <div class="stat-label">Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hyundai -->
+            <div class="brand-card ">
+                <div class="brand-header" style="background-color: #c1c5c9;">
+                    <div class="brand-logo"><img style="margin: 15px; height: 150px;" src="Pictures/Hyundai-Logo.png">
+                    </div>
+                </div>
+                <div class="brand-body">
+                    <h3 class="brand-name">Hyundai</h3>
+                    <p class="brand-tagline">New Thinking. New Possibilities.</p>
+                    <p class="brand-description">
+                        Hyundai combines award-winning design with impressive warranties and value. Experience
+                        forward-thinking technology and modern style in every Hyundai vehicle.
+                    </p>
+                    <div class="models-section">
+                        <h4 class="models-title">Popular Models</h4>
+                        <div class="models-list">
+                            <span class="model-tag">Elantra</span>
+                            <span class="model-tag">Sonata</span>
+                            <span class="model-tag">Tucson</span>
+                            <span class="model-tag">Santa Fe</span>
+                            <span class="model-tag">Kona</span>
+                            <span class="model-tag">Palisade</span>
+                        </div>
+                        <a href="Hyundai.html" class="view-models-btn">View All Models →</a>
+                    </div>
+                    <div class="brand-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">21+</div>
+                            <div class="stat-label">Models</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.7</div>
+                            <div class="stat-label">Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Volkswagen -->
+            <div class="brand-card">
+                <div class="brand-header" style="background-color: #001E50;">
+                    <div class="brand-logo"><img style="margin: 15px; height: 160px; width: 190px;"
+                            src="Pictures/Volkswagen-Logo.png"></div>
+                </div>
+                <div class="brand-body">
+                    <h3 class="brand-name">Volkswagen</h3>
+                    <p class="brand-tagline">Drive Bigger</p>
+                    <p class="brand-description">
+                        Volkswagen is a major German automobile manufacturer, known for iconic models like the Beetle
+                        and the Golf, that is currently a leading provider of sustainable mobility solutions. </p>
+                    <div class="models-section">
+                        <h4 class="models-title">Popular Models</h4>
+                        <div class="models-list">
+                            <span class="model-tag">Lamando</span>
+                            <span class="model-tag">Passat</span>
+                            <span class="model-tag">Lavida</span>
+                            <span class="model-tag">Talagon</span>
+                            <span class="model-tag">Amarok</span>
+                            <span class="model-tag">Tavendor</span>
+                        </div>
+                        <a href="Volkswagen.html" class="view-models-btn">View All Models →</a>
+                    </div>
+                    <div class="brand-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">24+</div>
+                            <div class="stat-label">Models</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.6</div>
+                            <div class="stat-label">Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <!-- All Brands End -->
+
+     <!-- Footer -->
+    <footer class="text-center text-lg-start  text-white">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                    <a href="https://www.facebook.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://x.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.google.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="https://www.instagram.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Browse
+                        </h6>
+                        <p>
+                            <a href="Brands.html" class="text-decoration-none text-reset">All Cars</a>
+                        </p>
+                        <p>
+                            <a href="PreOwned-Cars.html" class="text-decoration-none text-reset">PreOwned Cars</a>
+                        </p>
+                        <p>
+                            <a href="Range-of-cars.html" class="text-decoration-none text-reset">Car Type</a>
+                        </p>
+
+                    </div>
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Company
+                        </h6>
+                        <p>
+                            <a href="Aboutus.html" class=" text-decoration-none text-reset">About Carvan</a>
+                        </p>
+                        <p>
+                            <a href="Contact.html" class="text-decoration-none text-reset">Contact Support</a>
+                        </p>
+                        <p>
+                            <a href="#" class=" text-decoration-none text-reset">Home</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            For Sellers
+                        </h6>
+                        <p>
+                            <a href="Range-of-cars.html?category=Van" class="text-decoration-none text-reset">Vans</a>
+                        </p>
+                        <p>
+                            <a href="Range-of-cars.html?category=Sedan"
+                                class="text-decoration-none text-reset">Sedan</a>
+                        </p>
+                        <p>
+                            <a href="Range-of-cars.html?category=Small Car"
+                                class="text-decoration-none text-reset">Small Cars</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i>511, Suite # 202-203, Main Shahra-e-Faisal, near Lal Kothi
+                            (house), Karachi, 75400</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Carvan. All rights reserved. Quality Cars, Trusted Deals.
+            <a class='text-reset fw-bold text-decoration-none ' href='/home'>Carvan</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    
+    <script>
+       
+        const searchInput = document.getElementById('searchInput');
+        const brandCards = document.querySelectorAll('.brand-card'); 
+
+        
+        function filterBrands() {
+            const searchText = searchInput.value.toLowerCase();
+
+            brandCards.forEach(card => {
+                const brandName = card.textContent.toLowerCase();
+
+                if (brandName.includes(searchText)) {
+                    card.style.display = 'block'; 
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        
+        searchInput.addEventListener('input', filterBrands);
+    </script>
+</body>
+
+</html>

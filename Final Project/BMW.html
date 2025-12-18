@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMW</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity=""
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+<style>
+    :root {
+        --primary-bg: #fff;
+        --secondary-bg: #f5f5f5;
+        --header-bg: #000;
+        --highlight-bg: #1c69d4;
+        --card-bg: #1a1a1a;
+        --primary-text: #222;
+        --secondary-text: #555;
+        --highlight-text: #1c69d4;
+        --white-text: #fff;
+        --button-text: #fff;
+        --muted-text: #999;
+        --luxury-gold: #d4af37;
+        --bmw-blue: #1c69d4;
+        --bmw-dark: #0d1117;
+        --font-family: "Poppins", Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: var(--font-family);
+        background-color: var(--primary-bg);
+        color: var(--primary-text);
+        line-height: 1.6;
+    }
+
+    /* Navbar & Footer */
+    nav {
+        background-color: #000;
+        font-family: var(--font-family);
+    }
+
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav>a {
+        font-family: var(--font-family);
+    }
+
+    footer {
+        background-color: #000;
+    }
+
+    .navbar-nav .nav-link {
+        font-weight: 500;
+        font-size: 16px;
+        color: #fff !important;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+        color: #ff0000 !important;
+    }
+
+    .dropdown-menu {
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .dropdown-item:hover {
+        background: #f8f9fa;
+        color: #e60000;
+    }
+
+    .btn-danger {
+        background-color: #ff0000 !important;
+        border: none;
+        border-radius: 6px;
+        transition: 0.3s;
+    }
+
+    .btn-danger:hover {
+        background-color: #cc0000 !important;
+    }
+
+    /* ----------------------------- */
+    /*  DROPDOWN — SHOW ON HOVER     */
+    /* ----------------------------- */
+    @media (min-width: 992px) {
+        .navbar .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+
+    /* ----------------------------- */
+    /*  ANIMATION & TRANSITION       */
+    /* ----------------------------- */
+    .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.5s ease-in-out;
+
+        /* Glossy / Glassmorphism effect */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.885);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 12px;
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        padding: 12px 0;
+    }
+
+    /* Dropdown item styling */
+    .dropdown-item {
+        color: #000;
+        font-weight: 500;
+        padding: 10px 20px;
+        transition: 0.25s ease;
+    }
+
+    /* Hover effect */
+    .dropdown-item:hover {
+        background: rgba(255, 255, 255, 0.6);
+        color: #e60000;
+        backdrop-filter: blur(18px);
+        border-radius: 8px;
+    }
+
+    #upper-footer {
+
+        flex-direction: row;
+    }
+
+    i:hover {
+        color: #e60000;
+    }
+
+    p,
+    h4 {
+        color: var(--muted-text);
+        /* font-size: 0.95rem; */
+    }
+
+    /* Navbar & Footer */
+
+    /* Breadcrumb */
+
+
+    .breadcrumb {
+        background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+        padding: 1rem 5%;
+        font-size: 0.9rem;
+    }
+
+    .breadcrumb a {
+        color: var(--secondary-text);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .breadcrumb a:hover {
+        color: var(--bmw-blue);
+    }
+
+    .breadcrumb span {
+        color: var(--muted-text);
+        margin: 0 0.5rem;
+    }
+
+    /* Breadcrumb End*/
+
+    /* Hero   TILL */
+    .hero-section {
+        background: linear-gradient(135deg, #0d1117 0%, #1c69d4 50%, #0d1117 100%);
+        color: var(--white-text);
+        padding: 5rem 5%;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 50% 50%, rgba(28, 105, 212, 0.3) 0%, transparent 70%);
+        animation: pulse-bg 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse-bg {
+
+        0%,
+        100% {
+            opacity: 0.5;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-section .brand-logo {
+        font-size: 4.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        letter-spacing: 8px;
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 0 30px rgba(28, 105, 212, 0.8);
+    }
+
+    .hero-section .tagline {
+        font-size: 1.3rem;
+        font-style: italic;
+        color: #e0e0e0;
+        margin-bottom: 0.5rem;
+        letter-spacing: 2px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+        color: #ccc;
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Hero  */
+
+
+    .info-div {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 4rem 5%;
+    }
+
+    /* Banner*/
+
+    .info-banner {
+        background: linear-gradient(135deg, #1c69d4 0%, #0f4a9c 50%, #1c69d4 100%);
+        color: var(--white-text);
+        padding: 3rem 2rem;
+        border-radius: 16px;
+        margin-bottom: 3rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(28, 105, 212, 0.4);
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+
+    .info-banner:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(28, 105, 212, 0.7);
+    }
+
+    .info-banner::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+        animation: pulse 4s ease-in-out infinite;
+    }
+
+    .info-banner::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -150%;
+        width: 80%;
+        height: 200%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5), transparent);
+        transform: skewX(-25deg);
+        transition: left 0.7s ease;
+    }
+
+    .info-banner:hover::after {
+        left: 150%;
+    }
+
+    .lightning-bolt {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.9) 45%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.9) 55%, transparent 100%);
+        transform: skewX(-15deg);
+        opacity: 0;
+        transition: all 0.6s ease;
+    }
+
+    .info-banner:hover .lightning-bolt {
+        left: 100%;
+        opacity: 1;
+    }
+
+    .lightning-bolt-2 {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 150%;
+        height: 100%;
+        background: linear-gradient(-90deg, transparent 0%, rgba(255, 255, 255, 0.6) 48%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.6) 52%, transparent 100%);
+        transform: skewX(20deg);
+        opacity: 0;
+        transition: all 0.5s ease 0.1s;
+    }
+
+    .info-banner:hover .lightning-bolt-2 {
+        right: 100%;
+        opacity: 1;
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            transform: scale(1);
+            opacity: 0.5;
+        }
+
+        50% {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+    }
+
+    .info-banner-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .info-banner h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        letter-spacing: 1px;
+    }
+
+    .info-banner .highlight-number {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.3rem 1rem;
+        border-radius: 25px;
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin: 0 0.5rem;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .info-banner p {
+        font-size: 1.1rem;
+        opacity: 0.95;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+    }
+
+    /* Banner End */
+    .models-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .model-card {
+        background-color: var(--primary-bg);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 1px solid #e0e0e0;
+    }
+
+    .model-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 30px rgba(28, 105, 212, 0.25);
+        border-color: var(--bmw-blue);
+    }
+
+    .model-image {
+        width: 100%;
+        height: 220px;
+        background: linear-gradient(135deg, #e8e8e8 0%, #f5f5f5 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: var(--muted-text);
+        position: relative;
+        overflow: hidden;
+    }
+    .model-image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .model-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background-color: var(--bmw-blue);
+        color: var(--white-text);
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .model-badge.luxury {
+        background: linear-gradient(135deg, var(--luxury-gold) 0%, #b8942a 100%);
+    }
+
+    .model-content {
+        padding: 1.5rem;
+    }
+
+    .model-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-text);
+        margin-bottom: 0.5rem;
+    }
+
+    .model-category {
+        color: var(--bmw-blue);
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+
+    .model-specs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+        margin: 1.5rem 0;
+        padding: 1rem 0;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+    }
+
+    .spec-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .spec-label {
+        color: var(--muted-text);
+    }
+
+    .spec-value {
+        color: var(--primary-text);
+        font-weight: 600;
+    }
+
+    .model-price {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--bmw-blue);
+        margin: 1rem 0;
+    }
+
+    .model-description {
+        color: var(--secondary-text);
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .model-actions {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 0.8rem;
+        background: linear-gradient(135deg, var(--bmw-blue) 0%, #0f4a9c 100%);
+        color: var(--button-text);
+        border: none;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .btn-primary:hover {
+        background: linear-gradient(135deg, #0f4a9c 0%, var(--bmw-blue) 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(28, 105, 212, 0.4);
+    }
+
+    @media (max-width: 768px) {
+        nav ul {
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .hero-section .brand-logo {
+            font-size: 2.5rem;
+        }
+
+        .models-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .model-actions {
+            flex-direction: column;
+        }
+        .model-image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    /* TILL */
+    footer {
+        background: #000;
+        text-align: center;
+    }
+
+    footer p:hover {
+        color: red;
+    }
+</style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+
+            
+            <a class="navbar-brand d-flex align-items-center" href="Home.html">
+                <img src="logo.png" alt="Carvan Logo" height="85">
+            </a>
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+           
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+                    
+                    <li class="nav-item mx-2">
+                        <a class="nav-link " href="Brands.html" id="brandsDropdown" role="button" data-bs-toggle="dropdown">
+                            Brands
+                        </a>
+
+                    </li>
+
+                    <!-- Range of Cars Dropdown -->
+                    <li class="nav-item dropdown mx-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="rangeDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            Range of Cars
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="rangeDropdown">
+                            <li><a class="dropdown-item" href="Range-of-cars.html">All Ranges</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Small Car">Small Car</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Sedan">Sedan</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Van">Van</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=SUV">SUV</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Jeep">Jeep</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="PreOwned-Cars.html">PreOwned Cars</a>
+                    </li>
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="Aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="Contact.html">Contact Us</a>
+                    </li>
+
+                </ul>
+
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar & Footer End -->
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <a href="brands.html">Brands</a>
+        <span>›</span>
+        <strong>BMW Models</strong>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <section class="hero-section">
+        <div class="brand-logo">BMW</div>
+        <div class="tagline">The Ultimate Driving Machine</div>
+        <p>Experience unparalleled performance, luxury, and innovation with the complete BMW lineup</p>
+    </section>
+
+    <div class="container info-div">
+        <div class="info-banner">
+            <div class="lightning-bolt"></div>
+            <div class="lightning-bolt-2"></div>
+            <div class="info-banner-content">
+                <h2>Premium BMW Collection - <span class="highlight-number">9</span> Models Available</h2>
+                <p>Discover German engineering excellence from sporty sedans to luxurious SUVs</p>
+            </div>
+        </div>
+
+        <div class="models-grid">
+            <!-- 3 Series -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/bmw 3-series.png" alt="">
+                    <div class="model-badge">BEST SELLER</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">BMW 3 Series</h3>
+                    <p class="model-category">SPORTS SEDAN</p>
+                    <p class="model-description">
+                        The iconic 3 Series combines athletic handling with refined luxury. Perfectly balanced
+                        performance and comfort for the discerning driver.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">2.0L Turbo I4</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">255 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">5.6 seconds</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Drivetrain:</span>
+                            <span class="spec-value">RWD / AWD</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$43,800</div>
+                    <div class="model-actions">
+                        <button class="btn-primary">
+                            <a class="text-white text-decoration-none" href="BMW_details-pages/3 Series.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5 Series -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/bmw 5-series.png" alt="">
+                    <div class="model-badge">EXECUTIVE</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">BMW 5 Series</h3>
+                    <p class="model-category">LUXURY SEDAN</p>
+                    <p class="model-description">
+                        The executive sedan that defines sophistication. Advanced technology meets commanding
+                        performance in this business-class flagship.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">2.0L Turbo I4</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">248 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">6.0 seconds</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Drivetrain:</span>
+                            <span class="spec-value">RWD / AWD</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$57,200</div>
+                    <div class="model-actions">
+                       <button class="btn-primary">
+                            <a class="text-white text-decoration-none" href="BMW_details-pages/5 Series.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- i7  -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/bmw i7.avif" alt="">
+                    <div class="model-badge luxury">FLAGSHIP</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">BMW 7 Series</h3>
+                    <p class="model-category">LUXURY SEDAN</p>
+                    <p class="model-description">
+                        The pinnacle of BMW luxury and innovation. An executive masterpiece with cutting-edge technology
+                        and unrivaled comfort.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">3.0L Turbo I6</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">375 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">4.9 seconds</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Drivetrain:</span>
+                            <span class="spec-value">AWD</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$95,300</div>
+                    <div class="model-actions">
+                        <button class="btn-primary">
+                            <a class="text-white text-decoration-none" href="BMW_details-pages/i7.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- X3 -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/bmw x3.png" alt="">
+                    <div class="model-badge">POPULAR</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">BMW X3</h3>
+                    <p class="model-category">LUXURY SUV</p>
+                    <p class="model-description">
+                        The versatile Sports Activity Vehicle combines practicality with BMW's signature driving
+                        dynamics and premium craftsmanship.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">2.0L Turbo I4</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">248 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">6.0 seconds</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Seating:</span>
+                            <span class="spec-value">5 Passengers</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$48,550</div>
+                    <div class="model-actions">
+                        <button class="btn-primary">
+                            <a class="text-white text-decoration-none" 
+                            href="BMW_details-pages/X3.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- X5 -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/bmw i7.avif" alt="">
+                    <div class="model-badge">PREMIUM</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">BMW X5</h3>
+                    <p class="model-category">LUXURY SUV</p>
+                    <p class="model-description">
+                        Spacious luxury meets commanding presence. The X5 delivers powerful performance with three rows
+                        of premium comfort.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">3.0L Turbo I6</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">335 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">5.3 seconds</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Seating:</span>
+                            <span class="spec-value">7 Passengers</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$65,400</div>
+                    <div class="model-actions">
+                        <button class="btn-primary">
+                            <a class="text-white text-decoration-none" 
+                            href="BMW_details-pages/X5.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- X7 -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/bmw x7.png" alt="">
+                    <div class="model-badge luxury">ULTIMATE</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">BMW X7</h3>
+                    <p class="model-category">LUXURY SUV</p>
+                    <p class="model-description">
+                        BMW's largest and most luxurious SUV. Exceptional space, cutting-edge technology, and
+                        uncompromising luxury for seven.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">3.0L Turbo I6</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">375 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">5.6 seconds</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Seating:</span>
+                            <span class="spec-value">7 Passengers</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$78,500</div>
+                    <div class="model-actions">
+                        <button class="btn-primary">
+                            <a class="text-white text-decoration-none" 
+                            href="BMW_details-pages/X5.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- i8 -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/bmw m3.jpg" alt="">
+                    <div class="model-badge">M PERFORMANCE</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">BMW M3</h3>
+                    <p class="model-category">HIGH-PERFORMANCE SEDAN</p>
+                    <p class="model-description">
+                        The legendary M3 delivers race-bred performance with everyday usability. Pure driving excitement
+                        in its most refined form.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">3.0L Twin-Turbo I6</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">473 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">3.8 seconds</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Top Speed:</span>
+                            <span class="spec-value">180 mph</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$74,900</div>
+                    <div class="model-actions">
+                        <button class="btn-primary">
+                            <a class="text-white text-decoration-none" 
+                            href="BMW_details-pages/i8.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- M4 Comp -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/bmw ix.png" alt="">
+                    <div class="model-badge">ELECTRIC</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">BMW iX</h3>
+                    <p class="model-category">ELECTRIC SUV</p>
+                    <p class="model-description">
+                        BMW's vision for electric mobility. Zero emissions with extraordinary range, performance, and
+                        luxury in a stunning design.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Range:</span>
+                            <span class="spec-value">324 miles</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">516 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">4.6 seconds</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Charging:</span>
+                            <span class="spec-value">DC Fast</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$87,250</div>
+                    <div class="model-actions">
+                        <button class="btn-primary">
+                            <a class="text-white text-decoration-none" 
+                            href="BMW_details-pages/M4 Comp.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- M5 Comp -->
+            <div class="model-card">
+                <div class="model-image">
+                   <img src="Pictures/bmw m5.jpg" alt="">
+                    <div class="model-badge">ELECTRIC</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">M5 Comp</h3>
+                    <p class="model-category">ELECTRIC SUV</p>
+                    <p class="model-description">
+                        BMW's vision for electric mobility. Zero emissions with extraordinary range, performance, and
+                        luxury in a stunning design.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Range:</span>
+                            <span class="spec-value">324 miles</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">516 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">4.6 seconds</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Charging:</span>
+                            <span class="spec-value">DC Fast</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$87,250</div>
+                    <div class="model-actions">
+                        <button class="btn-primary">
+                            <a class="text-white text-decoration-none" 
+                            href="BMW_details-pages/M5 Comp.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+     <!-- Footer -->
+    <footer class="text-center text-lg-start  text-white">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="https://www.facebook.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://x.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.google.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="https://www.instagram.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Browse
+                        </h6>
+                        <p>
+                            <a href="Brands.html" class="text-decoration-none text-reset">All Cars</a>
+                        </p>
+                        <p>
+                            <a href="PreOwned-Cars.html" class="text-decoration-none text-reset">PreOwned Cars</a>
+                        </p>
+                        <p>
+                            <a href="Range-of-cars.html" class="text-decoration-none text-reset">Car Type</a>
+                        </p>
+
+                    </div>
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Company
+                        </h6>
+                        <p>
+                            <a href="Aboutus.html" class=" text-decoration-none text-reset">About Carvan</a>
+                        </p>
+                        <p>
+                            <a href="Contact.html" class="text-decoration-none text-reset">Contact Support</a>
+                        </p>
+                        <p>
+                            <a href="#" class=" text-decoration-none text-reset">Home</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            For Sellers
+                        </h6>
+                        <p>
+                            <a href="Range-of-cars.html?category=Van" class="text-decoration-none text-reset">Vans</a>
+                        </p>
+                        <p>
+                            <a href="Range-of-cars.html?category=Sedan"
+                                class="text-decoration-none text-reset">Sedan</a>
+                        </p>
+                        <p>
+                            <a href="Range-of-cars.html?category=Small Car"
+                                class="text-decoration-none text-reset">Small Cars</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i>511, Suite # 202-203, Main Shahra-e-Faisal, near Lal Kothi
+                            (house), Karachi, 75400</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Carvan. All rights reserved. Quality Cars, Trusted Deals.
+            <a class='text-reset fw-bold text-decoration-none ' href='/home'>Carvan</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+</body>
+
+</html>

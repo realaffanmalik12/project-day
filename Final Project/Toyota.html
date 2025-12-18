@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOYOTA</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity=""
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+<style>
+    :root {
+        --primary-bg: #fff;
+        --secondary-bg: #FFF8F0;
+        --header-bg: #CC0000;
+        --highlight-bg: #E60000;
+        --card-bg: #2d1f1f;
+        --primary-text: #1a1a1a;
+        --secondary-text: #555;
+        --highlight-text: #CC0000;
+        --white-text: #fff;
+        --button-text: #fff;
+        --muted-text: #999;
+        --toyota-red: #CC0000;
+        --toyota-dark-red: #A00000;
+        --toyota-silver: #C0C0C0;
+        --toyota-black: #1a1a1a;
+        --toyota-gold: #B8860B;
+        --toyota-gradient-start: #CC0000;
+        --toyota-gradient-end: #FF3333;
+        --font-family: "Poppins", Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: var(--font-family);
+        background-color: var(--primary-bg);
+        color: var(--primary-text);
+        line-height: 1.6;
+    }
+
+    /* Navbar & Footer */
+    nav {
+        background-color: #000;
+        font-family: var(--font-family);
+    }
+
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav>a {
+        font-family: var(--font-family);
+    }
+
+    footer {
+        background-color: #000;
+    }
+
+    .navbar-nav .nav-link {
+        font-weight: 500;
+        font-size: 16px;
+        color: #fff !important;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+        color: #ff0000 !important;
+    }
+
+    .dropdown-menu {
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .dropdown-item:hover {
+        background: #f8f9fa;
+        color: #e60000;
+    }
+
+    .btn-danger {
+        background-color: #ff0000 !important;
+        border: none;
+        border-radius: 6px;
+        transition: 0.3s;
+    }
+
+    .btn-danger:hover {
+        background-color: #cc0000 !important;
+    }
+
+    /* ----------------------------- */
+    /*  DROPDOWN — SHOW ON HOVER     */
+    /* ----------------------------- */
+    @media (min-width: 992px) {
+        .navbar .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+
+    /* ----------------------------- */
+    /*  ANIMATION & TRANSITION       */
+    /* ----------------------------- */
+    .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.5s ease-in-out;
+
+        /* Glossy / Glassmorphism effect */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.885);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 12px;
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        padding: 12px 0;
+    }
+
+    /* Dropdown item styling */
+    .dropdown-item {
+        color: #000;
+        font-weight: 500;
+        padding: 10px 20px;
+        transition: 0.25s ease;
+    }
+
+    /* Hover effect */
+    .dropdown-item:hover {
+        background: rgba(255, 255, 255, 0.6);
+        color: #e60000;
+        backdrop-filter: blur(18px);
+        border-radius: 8px;
+    }
+
+    #upper-footer {
+
+        flex-direction: row;
+    }
+
+    i:hover {
+        color: #e60000;
+    }
+
+    p,
+    h4 {
+        color: var(--muted-text);
+        /* font-size: 0.95rem; */
+    }
+
+    /* Navbar & Footer */
+
+    /* Breadcrumb */
+
+
+    .breadcrumb {
+        background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%);
+        padding: 1rem 5%;
+        font-size: 0.9rem;
+    }
+
+    .breadcrumb a {
+        color: var(--secondary-text);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .breadcrumb a:hover {
+        color: var(--toyota-red);
+    }
+
+    .breadcrumb span {
+        color: var(--muted-text);
+        margin: 0 0.5rem;
+    }
+
+    /* Breadcrumb End*/
+
+    /* Hero  */
+    .hero-section {
+        background: linear-gradient(135deg, #1a1a1a 0%, #CC0000 50%, #FF3333 100%);
+        color: var(--white-text);
+        padding: 5rem 5%;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+        animation: pulse-bg 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse-bg {
+
+        0%,
+        100% {
+            opacity: 0.5;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-section .brand-logo {
+        font-size: 4.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        letter-spacing: 12px;
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 0 30px rgba(255, 51, 51, 0.8);
+    }
+
+    .hero-section .tagline {
+        font-size: 1.3rem;
+        font-style: italic;
+        color: #FFEBEE;
+        margin-bottom: 0.5rem;
+        letter-spacing: 2px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+        color: #FFEBEE;
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Hero  */
+
+
+    .info-div {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 4rem 5%;
+    }
+
+    /* Banner*/
+    .info-banner {
+        background: linear-gradient(135deg, #CC0000 0%, #FF3333 50%, #CC0000 100%);
+        color: var(--white-text);
+        padding: 3rem 2rem;
+        border-radius: 16px;
+        margin-bottom: 3rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(204, 0, 0, 0.4);
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+
+    .info-banner:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(255, 51, 51, 0.7);
+    }
+
+    .info-banner::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+        animation: pulse 4s ease-in-out infinite;
+    }
+
+    .info-banner::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -150%;
+        width: 80%;
+        height: 200%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5), transparent);
+        transform: skewX(-25deg);
+        transition: left 0.7s ease;
+    }
+
+    .info-banner:hover::after {
+        left: 150%;
+    }
+
+    .lightning-bolt {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.9) 45%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.9) 55%, transparent 100%);
+        transform: skewX(-15deg);
+        opacity: 0;
+        transition: all 0.6s ease;
+    }
+
+    .info-banner:hover .lightning-bolt {
+        left: 100%;
+        opacity: 1;
+    }
+
+    .lightning-bolt-2 {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 150%;
+        height: 100%;
+        background: linear-gradient(-90deg, transparent 0%, rgba(255, 255, 255, 0.6) 48%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.6) 52%, transparent 100%);
+        transform: skewX(20deg);
+        opacity: 0;
+        transition: all 0.5s ease 0.1s;
+    }
+
+    .info-banner:hover .lightning-bolt-2 {
+        right: 100%;
+        opacity: 1;
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            transform: scale(1);
+            opacity: 0.5;
+        }
+
+        50% {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+    }
+
+    .info-banner-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .info-banner h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        letter-spacing: 1px;
+    }
+
+    .info-banner .highlight-number {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.25);
+        padding: 0.3rem 1rem;
+        border-radius: 25px;
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin: 0 0.5rem;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .info-banner p {
+        font-size: 1.1rem;
+        opacity: 0.95;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+    }
+
+    /* Banner End */
+    .models-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .model-card {
+        background-color: var(--primary-bg);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 1px solid #e0e0e0;
+    }
+
+    .model-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 30px rgba(204, 0, 0, 0.25);
+        border-color: var(--toyota-red);
+    }
+
+    .model-image {
+        width: 100%;
+        height: 220px;
+        background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: var(--toyota-red);
+        position: relative;
+        overflow: hidden;
+    }
+    .model-image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .model-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background-color: var(--toyota-red);
+        color: var(--white-text);
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .model-badge.hybrid {
+        background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+    }
+
+    .model-badge.performance {
+        background: linear-gradient(135deg, #1a1a1a 0%, #CC0000 100%);
+    }
+
+    .model-badge.suv {
+        background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+    }
+
+    .model-badge.luxury {
+        background: linear-gradient(135deg, #1a1a1a 0%, #B8860B 100%);
+    }
+
+    .model-badge.truck {
+        background: linear-gradient(135deg, #424242 0%, #757575 100%);
+    }
+
+    .model-content {
+        padding: 1.5rem;
+    }
+
+    .model-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-text);
+        margin-bottom: 0.5rem;
+    }
+
+    .model-category {
+        color: var(--toyota-red);
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+
+    .model-specs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+        margin: 1.5rem 0;
+        padding: 1rem 0;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+    }
+
+    .spec-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .spec-label {
+        color: var(--muted-text);
+    }
+
+    .spec-value {
+        color: var(--primary-text);
+        font-weight: 600;
+    }
+
+    .model-price {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--toyota-red);
+        margin: 1rem 0;
+    }
+
+    .model-description {
+        color: var(--secondary-text);
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .model-actions {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 0.8rem;
+        background: linear-gradient(135deg, #CC0000 0%, #FF3333 100%);
+        color: var(--button-text);
+        border: none;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .btn-primary:hover {
+        background: linear-gradient(135deg, #FF3333 0%, #CC0000 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(204, 0, 0, 0.4);
+    }
+
+    footer {
+        background: #000;
+        text-align: center;
+    }
+
+    footer p:hover {
+        color: red;
+    }
+
+    @media (max-width: 768px) {
+        nav ul {
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .hero-section .brand-logo {
+            font-size: 2.5rem;
+        }
+
+        .models-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .model-actions {
+            flex-direction: column;
+        }
+        .model-image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+</style>
+</head>
+
+<div>
+    <!-- Navbar & Footer-->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+
+            <!-- LOGO -->
+            <a class="navbar-brand d-flex align-items-center" href="Home.html">
+                <img src="logo.png" alt="Carvan Logo" height="85">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- NAV CONTENT -->
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <!-- LEFT NAV ITEMS -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+                    <!-- Brands Dropdown -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link " href="Brands.html" id="brandsDropdown" role="button" data-bs-toggle="dropdown">
+                            Brands
+                        </a>
+
+                    </li>
+
+                    <!-- Range of Cars Dropdown -->
+                    <li class="nav-item dropdown mx-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="rangeDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            Range of Cars
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="rangeDropdown">
+                            <li><a class="dropdown-item" href="Range-of-cars.html">All Ranges</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Small Car">Small Car</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Sedan">Sedan</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Van">Van</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=SUV">SUV</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Jeep">Jeep</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="PreOwned-Cars.html">PreOwned Cars</a>
+                    </li>
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="Aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="Contact.html">Contact Us</a>
+                    </li>
+
+                </ul>
+
+                <!-- Right Button -->
+                <a href="#" class="btn btn-danger px-4 py-2 fw-semibold">Post Ad</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar & Footer End -->
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <a href="brands.html">Brands</a>
+        <span>›</span>
+        <strong>Toyota Models</strong>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <section class="hero-section">
+        <div class="brand-logo">TOYOTA</div>
+        <div class="tagline">Let's Go Places</div>
+        <p>Built on decades of legendary reliability, innovative hybrid technology, and a commitment to quality</p>
+    </section>
+
+    <div class="container info-div">
+        <div class="info-banner">
+            <div class="lightning-bolt"></div>
+            <div class="lightning-bolt-2"></div>
+            <div class="info-banner-content">
+                <h2>Legendary Reliability - <span class="highlight-number">9</span> Models Available</h2>
+                <p>From efficient hybrids to rugged trucks and family-friendly SUVs</p>
+            </div>
+        </div>
+
+        <div class="models-grid">
+            <!-- Toyota Corolla -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/toyota corolla.png " alt="">
+                    <div class="model-badge">BEST SELLER</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Toyota Corolla</h3>
+                    <p class="model-category">COMPACT SEDAN</p>
+                    <p class="model-description">
+                        The world's best-selling car. Proven reliability, excellent fuel economy, and modern safety
+                        features make it the smart choice for millions.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">2.0L I4</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">169 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">MPG:</span>
+                            <span class="spec-value">38 Highway</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">8.2 seconds</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$22,050</div>
+                    <div class="model-actions">
+                        <button class="btn-primary">
+                            <a class="text-white text-decoration-none" href="Toyota_details-pages/Corolla.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toyota Camry -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/toyota camry.png" alt="">
+                    <div class="model-badge hybrid">HYBRID AVAILABLE</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Toyota Camry</h3>
+                    <p class="model-category">MIDSIZE SEDAN</p>
+                    <p class="model-description">
+                        America's best-selling sedan. Spacious interior, advanced safety, and available hybrid
+                        technology deliver unmatched value and efficiency.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">2.5L I4</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">203 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">MPG:</span>
+                            <span class="spec-value">39 Highway</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">7.6 seconds</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$27,400</div>
+                    <div class="model-actions">
+                        <button class="btn-primary">
+                            <a class="text-white text-decoration-none" href="Toyota_details-pages/Camry.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toyota GR86 -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/toyota gr-86.png " alt="">
+                    <div class="model-badge performance">GR SPORT</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Toyota GR86</h3>
+                    <p class="model-category">SPORTS COUPE</p>
+                    <p class="model-description">
+                        Pure driving excitement. Lightweight chassis, rear-wheel drive, and naturally aspirated power
+                        create an unforgettable driving experience.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">2.4L Boxer</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">228 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">6.1 seconds</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Top Speed:</span>
+                            <span class="spec-value">140 mph</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$29,300</div>
+                    <div class="model-actions">
+                        <button class="btn-primary">
+                            <a class="text-white text-decoration-none" href="Toyota_details-pages/GR86.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toyota Cross -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/toyota corolla-cross.png " alt="">
+                    <div class="model-badge">COMPACT SUV</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Toyota Corolla Cross</h3>
+                    <p class="model-category">SUBCOMPACT SUV</p>
+                    <p class="model-description">
+                        Corolla's trusted reliability meets SUV versatility. Perfect size for city driving with the
+                        capability for weekend adventures.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">2.0L I4</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">169 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">MPG:</span>
+                            <span class="spec-value">33 Highway</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Seating:</span>
+                            <span class="spec-value">5 Passengers</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$24,500</div>
+                    <div class="model-actions">
+                        <button class="btn-primary">
+                            <a class="text-white text-decoration-none" href="Toyota_details-pages/Crown.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toyota RAV4 -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/toyota RAV4.png " alt="">
+                    <div class="model-badge">POPULAR</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Toyota RAV4</h3>
+                    <p class="model-category">COMPACT SUV</p>
+                    <p class="model-description">
+                        The compact SUV that started it all. Versatile, efficient, and available with rugged TRD trim or
+                        efficient hybrid powertrain.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">2.5L I4</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">203 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">MPG:</span>
+                            <span class="spec-value">35 Highway</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Seating:</span>
+                            <span class="spec-value">5 Passengers</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$29,200</div>
+                    <div class="model-actions">
+                        <button class="btn-primary">
+                            <a class="text-white text-decoration-none" href="Toyota_details-pages/RAV4.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toyota Highlander -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/toyota highlander.png " alt="">
+                    <div class="model-badge suv">FAMILY SUV</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Toyota Highlander</h3>
+                    <p class="model-category">MIDSIZE SUV</p>
+                    <p class="model-description">
+                        Spacious three-row family hauler. Premium comfort, powerful V6 or efficient hybrid, and
+                        legendary Toyota reliability for peace of mind.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">3.5L V6</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">295 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Towing:</span>
+                            <span class="spec-value">5,000 lbs</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Seating:</span>
+                            <span class="spec-value">7-8 Passengers</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$38,900</div>
+                    <div class="model-actions">
+                        <button class="btn-primary">
+                            <a class="text-white text-decoration-none" href="Toyota_details-pages/Highlander.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toyota 4Runner -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/toyota 4runner.jpg " alt="">
+                    <div class="model-badge suv">OFF-ROAD</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Toyota 4Runner</h3>
+                    <p class="model-category">MIDSIZE SUV</p>
+                    <p class="model-description">
+                        Legendary off-road capability. Body-on-frame construction, available rear locker, and proven V6
+                        power take you anywhere with confidence.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">4.0L V6</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">270 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Towing:</span>
+                            <span class="spec-value">5,000 lbs</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Seating:</span>
+                            <span class="spec-value">5-7 Passengers</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$41,900</div>
+                    <div class="model-actions">
+                        <button class="btn-primary">
+                            <a class="text-white text-decoration-none" href="Toyota_details-pages/4Runner.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toyota Revo -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/toyota revo.png " alt="">
+                    <div class="model-badge">BEST SELLER</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Toyota REVO</h3>
+                    <p class="model-category">COMPACT SEDAN</p>
+                    <p class="model-description">
+                        The world's best-selling car. Proven reliability, excellent fuel economy, and modern safety
+                        features make it the smart choice for millions.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">2.0L I4</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">169 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">MPG:</span>
+                            <span class="spec-value">38 Highway</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">8.2 seconds</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$22,050</div>
+                    <div class="model-actions">
+                        <button class="btn-primary">
+                            <a class="text-white text-decoration-none" href="Toyota_details-pages/Revo.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toyota Prado -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/toyota prado.png " alt="">
+                    <div class="model-badge suv">OFF-ROAD</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Toyota Prado</h3>
+                    <p class="model-category">MIDSIZE SUV</p>
+                    <p class="model-description">
+                        Legendary off-road capability. Body-on-frame construction, available rear locker, and proven V6
+                        power take you anywhere with confidence.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">4.0L V6</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">270 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Towing:</span>
+                            <span class="spec-value">5,000 lbs</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Seating:</span>
+                            <span class="spec-value">5-7 Passengers</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$41,900</div>
+                    <div class="model-actions">
+                        <button class="btn-primary">
+                            <a class="text-white text-decoration-none" href="Toyota_details-pages/Prado.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start  text-white">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+            <span>Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div>
+                <a href="https://www.facebook.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://x.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.google.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="https://www.instagram.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+        </div>
+        <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Browse
+                    </h6>
+                    <p>
+                        <a href="#!" class="text-decoration-none text-reset">All Cars</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-decoration-none text-reset">PreOwned Cars</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-decoration-none text-reset">Car Type</a>
+                    </p>
+
+                </div>
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Company
+                    </h6>
+                    <p>
+                        <a href="#!" class=" text-decoration-none text-reset">About Carvan</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-decoration-none text-reset">Contact Support</a>
+                    </p>
+                    <p>
+                        <a href="#!" class=" text-decoration-none text-reset">Pricing</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        For Sellers
+                    </h6>
+                    <p>
+                        <a href="#!" class="text-decoration-none text-reset">Pricing</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-decoration-none text-reset">Settings</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-decoration-none text-reset">Orders</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        info@example.com
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 Carvan. All rights reserved. Quality Cars, Trusted Deals.
+        <a class='text-reset fw-bold text-decoration-none ' href='/home'>Carvan</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+</body>
+
+</html>

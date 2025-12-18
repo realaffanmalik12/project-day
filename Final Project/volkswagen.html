@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOLKSWAGEN</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity=""
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+<style>
+    :root {
+        --primary-bg: #fff;
+        --secondary-bg: #F0F8FF;
+        --header-bg: #000;
+        --highlight-bg: #0066CC;
+        --card-bg: #2d2d2d;
+        --primary-text: #222;
+        --secondary-text: #555;
+        --highlight-text: #0066CC;
+        --white-text: #fff;
+        --button-text: #fff;
+        --muted-text: #999;
+        --vw-green: #00B140;
+        --vw-teal: #00A3A3;
+        --vw-lime: #7CB342;
+        --vw-dark: #1a1a1a;
+        --vw-mint: #E8F5E9;
+        --font-family: "Poppins", Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: var(--font-family);
+        background-color: var(--primary-bg);
+        color: var(--primary-text);
+        line-height: 1.6;
+    }
+
+
+    /* Navbar & Footer */
+    nav {
+        background-color: #000;
+        font-family: var(--font-family);
+    }
+
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav>a {
+        font-family: var(--font-family);
+    }
+
+    footer {
+        background-color: #000;
+    }
+
+    .navbar-nav .nav-link {
+        font-weight: 500;
+        font-size: 16px;
+        color: #fff !important;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+        color: #ff0000 !important;
+    }
+
+    .dropdown-menu {
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .dropdown-item:hover {
+        background: #f8f9fa;
+        color: #e60000;
+    }
+
+    .btn-danger {
+        background-color: #ff0000 !important;
+        border: none;
+        border-radius: 6px;
+        transition: 0.3s;
+    }
+
+    .btn-danger:hover {
+        background-color: #cc0000 !important;
+    }
+
+    /* ----------------------------- */
+    /*  DROPDOWN — SHOW ON HOVER     */
+    /* ----------------------------- */
+    @media (min-width: 992px) {
+        .navbar .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+
+    /* ----------------------------- */
+    /*  ANIMATION & TRANSITION       */
+    /* ----------------------------- */
+    .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.5s ease-in-out;
+
+        /* Glossy / Glassmorphism effect */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.885);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 12px;
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        padding: 12px 0;
+    }
+
+    /* Dropdown item styling */
+    .dropdown-item {
+        color: #000;
+        font-weight: 500;
+        padding: 10px 20px;
+        transition: 0.25s ease;
+    }
+
+    /* Hover effect */
+    .dropdown-item:hover {
+        background: rgba(255, 255, 255, 0.6);
+        color: #e60000;
+        backdrop-filter: blur(18px);
+        border-radius: 8px;
+    }
+
+    #upper-footer {
+
+        flex-direction: row;
+    }
+
+    i:hover {
+        color: #e60000;
+    }
+
+    p,
+    h4 {
+        color: var(--muted-text);
+        /* font-size: 0.95rem; */
+    }
+
+    /* Navbar & Footer */
+
+    /* Breadcrumb */
+
+    .breadcrumb {
+        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        padding: 1rem 5%;
+        font-size: 0.9rem;
+    }
+
+    .breadcrumb a {
+        color: var(--secondary-text);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .breadcrumb a:hover {
+        color: var(--vw-green);
+    }
+
+    .breadcrumb span {
+        color: var(--muted-text);
+        margin: 0 0.5rem;
+    }
+
+
+    /* Breadcrumb End*/
+
+    /* Hero   TILL */
+    .hero-section {
+        background: linear-gradient(135deg, #00B140 0%, #00A3A3 50%, #7CB342 100%);
+        color: var(--white-text);
+        padding: 5rem 5%;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+        animation: pulse-bg 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse-bg {
+
+        0%,
+        100% {
+            opacity: 0.5;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-section .brand-logo {
+        font-size: 4.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        letter-spacing: 8px;
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 0 30px rgba(0, 163, 163, 0.8);
+    }
+
+    .hero-section .tagline {
+        font-size: 1.3rem;
+        font-style: italic;
+        color: #E8F5E9;
+        margin-bottom: 0.5rem;
+        letter-spacing: 2px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+        color: #E8F5E9;
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Hero  */
+
+
+    .info-div {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 4rem 5%;
+    }
+
+    /* Banner*/
+
+    .info-banner {
+        background: linear-gradient(135deg, #00A3A3 0%, #7CB342 50%, #00A3A3 100%);
+        color: white;
+        padding: 3rem 2rem;
+        border-radius: 16px;
+        margin-bottom: 3rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 163, 163, 0.4);
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+
+    .info-banner:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(0, 163, 163, 0.7);
+    }
+
+    .info-banner::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+        animation: pulse 4s ease-in-out infinite;
+    }
+
+    .info-banner::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -150%;
+        width: 80%;
+        height: 200%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5), transparent);
+        transform: skewX(-25deg);
+        transition: left 0.7s ease;
+    }
+
+    .info-banner:hover::after {
+        left: 150%;
+    }
+
+    .lightning-bolt {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.9) 45%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.9) 55%, transparent 100%);
+        transform: skewX(-15deg);
+        opacity: 0;
+        transition: all 0.6s ease;
+    }
+
+    .info-banner:hover .lightning-bolt {
+        left: 100%;
+        opacity: 1;
+    }
+
+    .lightning-bolt-2 {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 150%;
+        height: 100%;
+        background: linear-gradient(-90deg, transparent 0%, rgba(255, 255, 255, 0.6) 48%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.6) 52%, transparent 100%);
+        transform: skewX(20deg);
+        opacity: 0;
+        transition: all 0.5s ease 0.1s;
+    }
+
+    .info-banner:hover .lightning-bolt-2 {
+        right: 100%;
+        opacity: 1;
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            transform: scale(1);
+            opacity: 0.5;
+        }
+
+        50% {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+    }
+
+    .info-banner-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .info-banner h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        letter-spacing: 1px;
+    }
+
+    .info-banner .highlight-number {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.25);
+        padding: 0.3rem 1rem;
+        border-radius: 25px;
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin: 0 0.5rem;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .info-banner p {
+        font-size: 1.1rem;
+        opacity: 0.95;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+    }
+
+    /* Banner End */
+
+    .models-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .model-card {
+        background-color: var(--primary-bg);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 1px solid #e0e0e0;
+    }
+
+    .model-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 30px rgba(0, 163, 163, 0.25);
+        border-color: var(--vw-teal);
+    }
+
+    .model-image {
+        width: 100%;
+        height: 220px;
+        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: var(--vw-teal);
+        position: relative;
+        overflow: hidden;
+    }
+    .model-image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .model-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background-color: var(--vw-green);
+        color: var(--white-text);
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .model-badge.electric {
+        background: linear-gradient(135deg, #00C853 0%, #00E676 100%);
+    }
+
+    .model-badge.performance {
+        background: linear-gradient(135deg, #00A3A3 0%, #7CB342 100%);
+    }
+
+    .model-badge.suv {
+        background: linear-gradient(135deg, #7CB342 0%, #9CCC65 100%);
+    }
+
+    .model-content {
+        padding: 1.5rem;
+    }
+
+    .model-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-text);
+        margin-bottom: 0.5rem;
+    }
+
+    .model-category {
+        color: var(--vw-green);
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+
+    .model-specs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+        margin: 1.5rem 0;
+        padding: 1rem 0;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+    }
+
+    .spec-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .spec-label {
+        color: var(--muted-text);
+    }
+
+    .spec-value {
+        color: var(--primary-text);
+        font-weight: 600;
+    }
+
+    .model-price {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--vw-green);
+        margin: 1rem 0;
+    }
+
+    .model-description {
+        color: var(--secondary-text);
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .model-actions {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 0.8rem;
+        background: linear-gradient(135deg, #00A3A3 0%, #7CB342 100%);
+        color: var(--button-text);
+        border: none;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .btn-primary:hover {
+        background: linear-gradient(135deg, #7CB342 0%, #00A3A3 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0, 163, 163, 0.4);
+    }
+
+    @media (max-width: 768px) {
+        nav ul {
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .hero-section .brand-logo {
+            font-size: 2.5rem;
+        }
+
+        .models-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .model-actions {
+            flex-direction: column;
+        }
+        .model-image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    /* TILL */
+
+    footer {
+        background: #000;
+        text-align: center;
+    }
+
+    footer p:hover {
+        color: red;
+    }
+</style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+
+            <!-- LOGO -->
+            <a class="navbar-brand d-flex align-items-center" href="Home.html">
+                <img src="Pictures/logo.png" alt="Carvan Logo" height="85">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- NAV CONTENT -->
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <!-- LEFT NAV ITEMS -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+                    <!-- Brands Dropdown -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link " href="Brands.html" id="brandsDropdown" role="button" >
+                            Brands
+                        </a>
+
+                    </li>
+
+                    <!-- Range of Cars Dropdown -->
+                    <li class="nav-item dropdown mx-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="rangeDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            Range of Cars
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="rangeDropdown">
+                            <li><a class="dropdown-item" href="Range-of-cars.html">All Ranges</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Small Car">Small Car</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Sedan">Sedan</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Van">Van</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=SUV">SUV</a></li>
+                            <li><a class="dropdown-item" href="Range-of-cars.html?category=Jeep">Jeep</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="PreOwned-Cars.html">PreOwned Cars</a>
+                    </li>
+
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="Aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="Contact.html">Contact Us</a>
+                    </li>
+
+                </ul>
+
+                <!-- Right Button -->
+                <a href="#" class="btn btn-danger px-4 py-2 fw-semibold">Post Ad</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar & Footer End -->
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <a href="brands.html">Brands</a>
+        <span>›</span>
+        <strong>Volkswagen Models</strong>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <section class="hero-section">
+        <div class="brand-logo">VOLKSWAGEN</div>
+        <div class="tagline">Das Auto - The Car</div>
+        <p>Experience German engineering excellence with precision, reliability, and forward-thinking innovation</p>
+    </section>
+
+    <div class="container info-div">
+        <div class="info-banner">
+            <div class="lightning-bolt"></div>
+            <div class="lightning-bolt-2"></div>
+            <div class="info-banner-content">
+                <h2>German Engineering - <span class="highlight-number">9</span> Models Available</h2>
+                <p style="color: white;">From efficient city cars to powerful SUVs and the electric ID. family</p>
+            </div>
+        </div>
+
+        <div class="models-grid">
+            <!-- VW Jetta -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/volkswagen-jetta.png" alt="">
+                    <div class="model-badge">BEST SELLER</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Volkswagen Jetta</h3>
+                    <p class="model-category">COMPACT SEDAN</p>
+                    <p class="model-description">
+                        Classic German sedan with modern technology. Spacious interior, smooth ride, and impressive fuel
+                        efficiency make it a daily driver favorite.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">1.5L Turbo I4</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">158 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">MPG:</span>
+                            <span class="spec-value">42 Highway</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">7.7 seconds</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$21,900</div>
+                    <button class="btn-primary">
+                        <a class="text-white text-decoration-none" href="Volswagen_details-pages/Jetta.html">View Details</a>
+                    </button>
+                </div>
+            </div>
+
+            <!-- VW Passat -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/volkswagen-passat.png" alt="">
+                    <div class="model-badge">EXECUTIVE</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Volkswagen Passat</h3>
+                    <p class="model-category">MIDSIZE SEDAN</p>
+                    <p class="model-description">
+                        Sophisticated elegance for the modern professional. Premium materials, refined driving dynamics,
+                        and advanced safety features.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">2.0L Turbo I4</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">174 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">MPG:</span>
+                            <span class="spec-value">36 Highway</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">7.4 seconds</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$25,500</div>
+                    <button class="btn-primary">
+                        <a class="text-white text-decoration-none" href="Volswagen_details-pages/Passat.html">View Details</a>
+                    </button>
+                </div>
+            </div>
+
+            <!-- VW Golf GTI -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/volkswagen-golf-gti.jpg" alt="">
+                    <div class="model-badge performance">HOT HATCH</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Volkswagen Golf GTI</h3>
+                    <p class="model-category">SPORT HATCHBACK</p>
+                    <p class="model-description">
+                        The original hot hatch. Legendary performance meets everyday practicality with a turbocharged
+                        engine and sharp handling.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">2.0L Turbo I4</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">241 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">5.9 seconds</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Top Speed:</span>
+                            <span class="spec-value">155 mph</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$31,900</div>
+                    <button class="btn-primary">
+                        <a class="text-white text-decoration-none" href="Volswagen_details-pages/Golf_Gti.html">View Details</a>
+                    </button>
+                </div>
+            </div>
+
+            <!-- VW Taos -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/volkswagen-taos.png" alt="">
+                    <div class="model-badge">COMPACT SUV</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Volkswagen Taos</h3>
+                    <p class="model-category">COMPACT SUV</p>
+                    <p class="model-description">
+                        Bold design with impressive versatility. Perfect for urban adventures with modern technology and
+                        spacious cargo area.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">1.5L Turbo I4</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">158 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">MPG:</span>
+                            <span class="spec-value">34 Highway</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Seating:</span>
+                            <span class="spec-value">5 Passengers</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$25,200</div>
+                    <button class="btn-primary">
+                        <a class="text-white text-decoration-none" href="Volswagen_details-pages/Taos.html">View Details</a>
+                    </button>
+                </div>
+            </div>
+
+            <!-- VW Tiguan -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/volkswagen-tiguan.jpg" alt="">
+                    <div class="model-badge">POPULAR</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Volkswagen Tiguan</h3>
+                    <p class="model-category">COMPACT SUV</p>
+                    <p class="model-description">
+                        European sophistication meets family-friendly versatility. Available third row and advanced
+                        safety tech for peace of mind.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">2.0L Turbo I4</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">184 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">MPG:</span>
+                            <span class="spec-value">30 Highway</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Seating:</span>
+                            <span class="spec-value">5-7 Passengers</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$28,500</div>
+                    <button class="btn-primary">
+                        <a class="text-white text-decoration-none" href="Volswagen_details-pages/Tiguan.html">View Details</a>
+                    </button>
+                </div>
+            </div>
+
+            <!-- VW Atlas -->
+            <div class="model-card">
+                <div class="model-image">
+                   <img src="Pictures/volkswagen-atlas.png" alt="">
+                    <div class="model-badge suv">FAMILY SUV</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Volkswagen Atlas</h3>
+                    <p class="model-category">MIDSIZE SUV</p>
+                    <p class="model-description">
+                        American-sized SUV with German precision. Three spacious rows, powerful engine options, and
+                        premium features throughout.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">3.6L V6</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">276 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Towing:</span>
+                            <span class="spec-value">5,000 lbs</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Seating:</span>
+                            <span class="spec-value">7 Passengers</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$36,300</div>
+                    <button class="btn-primary">
+                        <a class="text-white text-decoration-none" href="Volswagen_details-pages/Atlas.html">View Details</a>
+                    </button>
+                </div>
+            </div>
+
+            <!-- VW ID.4 -->
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="Pictures/volkswagen-id-4.jpg" alt="">
+                    <div class="model-badge electric">ELECTRIC</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Volkswagen ID.4</h3>
+                    <p class="model-category">ELECTRIC SUV</p>
+                    <p class="model-description">
+                        The future of mobility is here. All-electric with up to 275 miles range, spacious interior, and
+                        instant torque delivery.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Motor:</span>
+                            <span class="spec-value">Electric</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">201 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Range:</span>
+                            <span class="spec-value">275 miles</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">7.6 seconds</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$38,995</div>
+                   <button class="btn-primary">
+                        <a class="text-white text-decoration-none" href="Volswagen_details-pages/ID.4.html">View Details</a>
+                    </button>
+                </div>
+            </div>
+
+            <!-- VW Arteon -->
+            <div class="model-card">
+                <div class="model-image">
+                   <img src="Pictures/volkswagen-arteon.png" alt="">
+                    <div class="model-badge">PREMIUM</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Volkswagen Arteon</h3>
+                    <p class="model-category">LUXURY SEDAN</p>
+                    <p class="model-description">
+                        Avant-garde design meets executive luxury. Fastback styling, premium materials, and powerful
+                        turbocharged performance.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">2.0L Turbo I4</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">300 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-60 mph:</span>
+                            <span class="spec-value">5.6 seconds</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Drivetrain:</span>
+                            <span class="spec-value">4Motion AWD</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$42,800</div>
+                   <button class="btn-primary">
+                        <a class="text-white text-decoration-none" href="Volswagen_details-pages/Arteon.html">View Details</a>
+                    </button>
+                </div>
+            </div>
+
+            <!-- VW Jetta GLI -->
+            <div class="model-card">
+                <div class="model-image">
+                   <img src="Pictures/volkswagen-jetta-gli.webp" alt="">
+                    <div class="model-badge">COMPACT SUV</div>
+                </div>
+                <div class="model-content">
+                    <h3 class="model-name">Volkswagen Jetta GLI</h3>
+                    <p class="model-category">COMPACT SUV</p>
+                    <p class="model-description">
+                    The VW Jetta GLI is a sporty, performance-focused version of the standard Jetta, blending daily practicality with GTI-like
+                    fun, featuring a turbocharged engine, upgraded suspension, and distinctive red accents for an affordable, engaging compact sedan experience. 
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span class="spec-value">2.0L 4-Cylinder</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">228 HP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">MPG:</span>
+                            <span class="spec-value">35 Highway</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Seating:</span>
+                            <span class="spec-value">5 Passengers</span>
+                        </div>
+                    </div>
+                    <div class="model-price">$24,850</div>
+                    <button class="btn-primary">
+                        <a class="text-white text-decoration-none" href="Volswagen_details-pages/Jetta GLI.html">View Details</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start  text-white">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                    <a href="https://www.facebook.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://x.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.google.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="https://www.instagram.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/" class="me-4 text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Browse
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">All Cars</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">PreOwned Cars</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">Car Type</a>
+                        </p>
+
+                    </div>
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Company
+                        </h6>
+                        <p>
+                            <a href="#!" class=" text-decoration-none text-reset">About Carvan</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">Contact Support</a>
+                        </p>
+                        <p>
+                            <a href="#!" class=" text-decoration-none text-reset">Pricing</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            For Sellers
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">Pricing</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">Settings</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none text-reset">Orders</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Carvan. All rights reserved. Quality Cars, Trusted Deals.
+            <a class='text-reset fw-bold text-decoration-none ' href='/home'>Carvan</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+</body>
+
+</html>
